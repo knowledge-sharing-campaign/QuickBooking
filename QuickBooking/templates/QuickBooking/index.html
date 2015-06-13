@@ -1,14 +1,19 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html>
 
 <head>
     <title>Home Page</title>
+    <link rel="stylesheet" type="text/css" href="{% static "QuickBooking/css/home.css" %}">
+    <script type="text/javascript" src="{% static "QuickBooking/js/home.js" %}"></script>
 </head>
 
 <body>
     <div style="text-align: center;">
         <h1>QuickBooking Home Page</h1>
     </div>
+    <img src="{% static "QuickBooking/images/logo.png" %}"/>
     <form action="{% url 'QuickBooking:results' %}" method="post">
         {% csrf_token %}
         <select name="src">
