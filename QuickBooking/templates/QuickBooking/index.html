@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home Page</title>
+</head>
+
+<body>
+    <div style="text-align: center;">
+        <h1>QuickBooking Home Page</h1>
+    </div>
+    <form action="{% url 'QuickBooking:results' %}" method="post">
+        {% csrf_token %}
+        <select name="src">
+            {% for stop in bus_stop_list %}
+            <option>{{ stop.stopname }}</option>
+            {% endfor %}
+        </select>
+        <select name="dest">
+            {% for stop in bus_stop_list %}
+            <option>{{ stop.stopname }}</option>
+            {% endfor %}
+        </select>
+        <button>Search</button>
+    </form>
+</body>
+
+</html>

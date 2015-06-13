@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+</head>
+<body>
+    <div style="text-align: center;">
+        <h1>Search Results</h1>
+    </div>
+
+    <table border="1" style="width:100%">
+        {% for route in bus_routes %}
+        <tr>
+            <td>{{ route.bus.company }}</td>
+            <td>{{ route.bus.make }}</td>
+            <td>{{ route.bus.capacity }}</td>
+            <td>{{ route.bus.type.type }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
