@@ -1,7 +1,3 @@
-.welcomeMsg{
-	text-align: center;
-	font-family: italic;
-}
 body{
 	width: 100%;
 	margin: 0 ;
@@ -9,6 +5,13 @@ body{
 	background-position: absolute;
 	background-repeat: no-repeat;
 	background-image: url("../images/background.jpg");
+}
+
+.welcomeMsg{
+	text-align: center;
+	font-family: italic;
+	color: #364043;
+	font-family: "Poiret One";
 }
 
 .oneWay { 
@@ -23,6 +26,10 @@ body{
 
 .tripSelection{
 	position: absolute;
+	padding: 260px 162px 0em;
+	color: #e78f08 ;
+	font-family: "Poiret One";
+	font: bold;
+
 
 }
-

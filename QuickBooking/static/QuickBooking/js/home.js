@@ -15,3 +15,8 @@ function checkTravelType(option) {
     }
 }
 
+$('.your-container').datepicker({
+    beforeShow: function(input, datepickerInstance) {
+        datepickerInstance.dpDiv.css('font-size', '11px');
+    }
+});
