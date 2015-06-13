@@ -5,7 +5,7 @@
 
 <head>
     <title>Home Page</title>
-    <link rel="stylesheet" type="text/css" href="{% static "QuickBooking/css/home.css" %}">
+    <link rel="stylesheet" type="" href="{% static "QuickBooking/css/home.css" %}">
     <script type="text/javascript" src="{% static "QuickBooking/js/home.js" %}"></script>
 </head>
 
@@ -14,6 +14,11 @@
         
     </div>
     <img src="{% static "QuickBooking/images/logo.png" %}"/>
+    <div class="welcomeMsg">
+    <br />
+    <h3> Your better choice for instant tickets &amp; faster travelling.</h3>
+    </div>
+
     <form action="{% url 'QuickBooking:results' %}" method="post">
         {% csrf_token %}
         <select name="src">
