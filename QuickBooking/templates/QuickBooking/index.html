@@ -37,14 +37,21 @@
             {% endfor %}
         </select>
         <button>Search</button>
-
+    <br/><br/>
     </form>
-    <form action=""><br>
-    <input type="radio" name="travel_option" value="One Way" onclick="checkTravelType(this);" checked>One Way
-    <input type="radio" name="travel_option" value="Round Trip" onclick="checkTravelType(this);">Round Trip
-    <div name="date" id="oneWay"> </div>
-    <div name="date" id="roundTrip"> </div>
+    </center>
+
+<center>
+
+<form action="">
+    <div class="tripSelection">
+        <input type="radio" name="travel_option" value="One Way" onclick="checkTravelType(this);" checked> One Way</input>
+        <div class="oneWay" name="date" id="oneWay"> </div>
+        <input type="radio" name="travel_option" value="Round Trip" onclick="checkTravelType(this);"> Round Trip</input>
+        <div class="roundTrip" name="date" id="roundTrip"></div>
+    </div>
 </form>
+</center>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
 <script src="{% static "QuickBooking/js/jquery-ui.min.js" %}"></script>
@@ -52,15 +59,5 @@
 <script type="text/javascript">
    defaultSelection();
 </script>
-=======
-          
-          <br /><br /><br />
-
-    </form>
-    </center>
-
->>>>>>> Farel, Benn |#6| Completed Homepage functionality
-
 </body>
-
 </html>

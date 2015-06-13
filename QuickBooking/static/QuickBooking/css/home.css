@@ -10,3 +10,19 @@ body{
 	background-repeat: no-repeat;
 	background-image: url("../images/background.jpg");
 }
+
+.oneWay { 
+	float: left;
+	position: center;
+}
+
+.roundTrip {
+	float: right;
+	position: center;
+}
+
+.tripSelection{
+	position: absolute;
+
+}
+
