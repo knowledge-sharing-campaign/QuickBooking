@@ -19,14 +19,18 @@
     <br />
     <h3> Your better choice for instant tickets &amp; faster travelling.</h3>
     </div>
-
+    <br/>
+    
+    <center>
     <form action="{% url 'QuickBooking:results' %}" method="post">
         {% csrf_token %}
+        From:
         <select name="src">
             {% for stop in bus_stop_list %}
             <option>{{ stop.stopname }}</option>
             {% endfor %}
         </select>
+        To:
         <select name="dest">
             {% for stop in bus_stop_list %}
             <option>{{ stop.stopname }}</option>
@@ -48,6 +52,14 @@
 <script type="text/javascript">
    defaultSelection();
 </script>
+=======
+          
+          <br /><br /><br />
+
+    </form>
+    </center>
+
+>>>>>>> Farel, Benn |#6| Completed Homepage functionality
 
 </body>
 

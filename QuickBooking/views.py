@@ -19,6 +19,7 @@ def results(request):
     template = loader.get_template('QuickBooking/results.html')
     context = RequestContext(request, {
         'bus_routes': bus_routes
-    })
 
+    })
+  
     return HttpResponse(template.render(context))
