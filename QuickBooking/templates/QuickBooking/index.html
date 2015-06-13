@@ -7,6 +7,7 @@
     <title>Home Page</title>
     <link rel="stylesheet" type="" href="{% static "QuickBooking/css/home.css" %}">
     <script type="text/javascript" src="{% static "QuickBooking/js/home.js" %}"></script>
+    <link href="{% static "QuickBooking/css/jquery-ui.min.css" %}" rel="stylesheet" />
 </head>
 
 <body>
@@ -33,6 +34,33 @@
         </select>
         <button>Search</button>
     </form>
+    <form action="">
+    <input type="radio" name="travel_option" value="One Way" onclick="checkTravelType(this);" checked>One Way<br>
+    <input type="radio" name="travel_option" value="Round Trip" onclick="checkTravelType(this);">Round Trip
+    <div name="date" id="date"> </div>
+    <div name="date" id="date2"> </div>
+</form>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+<script src="{% static "QuickBooking/js/jquery-ui.min.js" %}"></script>
+ 
+<script type="text/javascript">
+    $('#date').datepicker();
+    $('#date2').datepicker();
+    $('#date2').css("display", "none");
+
+    function checkTravelType(option) {
+        switch(option.value) {
+            case "One Way":
+                $('#date2').css("display", "none");
+                break;
+            case "Round Trip":
+                $('#date2').css("display", "block");
+                break;
+        }
+    }
+</script>
+
 </body>
 
 </html>
