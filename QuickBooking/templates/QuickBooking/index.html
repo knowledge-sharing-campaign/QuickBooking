@@ -33,32 +33,20 @@
             {% endfor %}
         </select>
         <button>Search</button>
+
     </form>
-    <form action="">
-    <input type="radio" name="travel_option" value="One Way" onclick="checkTravelType(this);" checked>One Way<br>
+    <form action=""><br>
+    <input type="radio" name="travel_option" value="One Way" onclick="checkTravelType(this);" checked>One Way
     <input type="radio" name="travel_option" value="Round Trip" onclick="checkTravelType(this);">Round Trip
-    <div name="date" id="date"> </div>
-    <div name="date" id="date2"> </div>
+    <div name="date" id="oneWay"> </div>
+    <div name="date" id="roundTrip"> </div>
 </form>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
 <script src="{% static "QuickBooking/js/jquery-ui.min.js" %}"></script>
  
 <script type="text/javascript">
-    $('#date').datepicker();
-    $('#date2').datepicker();
-    $('#date2').css("display", "none");
-
-    function checkTravelType(option) {
-        switch(option.value) {
-            case "One Way":
-                $('#date2').css("display", "none");
-                break;
-            case "Round Trip":
-                $('#date2').css("display", "block");
-                break;
-        }
-    }
+   defaultSelection();
 </script>
 
 </body>
