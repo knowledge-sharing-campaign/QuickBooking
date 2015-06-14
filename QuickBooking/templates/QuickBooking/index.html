@@ -4,7 +4,7 @@
 <html>
 
 <head>
-    <title>Home Page</title>
+    <title>QuickBooking</title>
     <link rel="stylesheet" type="" href="{% static "QuickBooking/css/home.css" %}">
     <script type="text/javascript" src="{% static "QuickBooking/js/home.js" %}"></script>
     <link href="{% static "QuickBooking/css/jquery-ui.min.css" %}" rel="stylesheet" />
@@ -32,12 +32,12 @@
             <option>{{ stop.stopname }}</option>
             {% endfor %}
         </select>
-        <button>Search</button>
+        
     <br/><br/>
     </form>
-    </center>
+    </center><br/>
 
-<center>
+<!-- <center> -->
 
 <form action="">
     <div class="tripSelection">
@@ -47,7 +47,7 @@
         <div class="roundTrip" name="date" id="roundTrip"></div>
     </div>
 </form>
-</center>
+<!-- </center> -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
 <script src="{% static "QuickBooking/js/jquery-ui.min.js" %}"></script>
@@ -60,5 +60,9 @@
     font-size:80%;
 }
 </style>
+
+<div class="search"><button>Search</button></div>
+
+<div id="footer" > Knowledge-Sharing-Campaign-Congo &#9830; INDIA &#9830; Email: KSC@gmail.com </div>
 </body>
 </html>

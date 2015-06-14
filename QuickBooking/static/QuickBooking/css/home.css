@@ -4,14 +4,14 @@ body{
 	background-size: 100% , 100% ;
 	background-position: absolute;
 	background-repeat: no-repeat;
-	background-image: url("../images/background.jpg");
+	background-image: url("../images/background1.jpg");
 }
 
 .welcomeMsg{
 	text-align: center;
 	font-family: italic;
-	color: #364043;
-	font-family: "Poiret One";
+	color: white;
+	font-family: "Courier", "Poiret One";
 }
 
 .oneWay { 
@@ -25,11 +25,21 @@ body{
 }
 
 .tripSelection{
-	position: absolute;
-	padding: 260px 162px 0em;
+	/*position: absolute;*/
+	padding: 0px 330px 0em;
 	color: #e78f08 ;
 	font-family: "Poiret One";
 	font: bold;
 
 
+}
+
+.search{
+	padding: 200px 0px 0em;
+	text-align: center;
+}
+
+#footer{
+	padding: 190px 0px 0em;
+	text-align: center;
 }
