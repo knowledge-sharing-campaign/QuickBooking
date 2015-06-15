@@ -4,7 +4,7 @@ body{
 	background-size: 100% , 100% ;
 	background-position: absolute;
 	background-repeat: no-repeat;
-	background-image: url("../images/background1.jpg");
+	background-image: url("../images/background.jpg");
 }
 
 .welcomeMsg{
@@ -25,7 +25,7 @@ body{
 }
 
 .tripSelection{
-	/*position: absolute;*/
+	position: absolute;
 	padding: 0px 330px 0em;
 	color: #e78f08 ;
 	font-family: "Poiret One";
@@ -40,6 +40,6 @@ body{
 }
 
 #footer{
-	padding: 190px 0px 0em;
+	padding: 200px 0px 0em;
 	text-align: center;
 }

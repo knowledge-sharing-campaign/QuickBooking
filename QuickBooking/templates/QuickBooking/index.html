@@ -33,19 +33,23 @@
             {% endfor %}
         </select>
         
-    <br/><br/>
+    <br/><br/><br>
+
+     <div class="tripSelection">
+        <input type="radio" name="travel_option" value="One Way" onclick="checkTravelType(this);" checked> One Way</input>
+        <div class="oneWay" name="date" id="oneWay"> </div>
+        <input type="radio" name="travel_option" value="Round Trip" onclick="checkTravelType(this);"> Round Trip</input>
+        <div class="roundTrip" name="date" id="roundTrip"></div>
+    </div>
+
+    <div class="search"><button>Search</button></div>
     </form>
     </center><br/>
 
 <!-- <center> -->
 
 <form action="">
-    <div class="tripSelection">
-        <input type="radio" name="travel_option" value="One Way" onclick="checkTravelType(this);" checked> One Way</input>
-        <div class="oneWay" name="date" id="oneWay"> </div>
-        <input type="radio" name="travel_option" value="Round Trip" onclick="checkTravelType(this);"> Round Trip</input>
-        <div class="roundTrip" name="date" id="roundTrip"></div>
-    </div>
+   
 </form>
 <!-- </center> -->
 
@@ -61,7 +65,7 @@
 }
 </style>
 
-<div class="search"><button>Search</button></div>
+
 
 <div id="footer" > Knowledge-Sharing-Campaign-Congo &#9830; INDIA &#9830; Email: KSC@gmail.com </div>
 </body>
