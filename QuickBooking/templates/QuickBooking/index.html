@@ -1,4 +1,4 @@
-{% load staticfiles %}
+ø{% load staticfiles %}
 
 <!DOCTYPE html>
 <html>
@@ -36,17 +36,15 @@
             <option>{{ stop.stopname }}</option>
             {% endfor %}
         </select>
-        <button>Search</button>
+    
     <br/><br/>
-     
-             <input type="radio" name="trip" value="One way" onclick="checkTravelType(this);" checked>One Way</input>
-             <input type="radio" name="trip" value="Round Trip" onclick="checkTravelType(this);">Round Trip</input>
-        
-             <br/><br/> 
+     <label for="from">Date of journey</label>
+<input type="text" id="from" name="from">
+<label for="to">Date of Return(Optional)</label>
+<input type="text" id="to" name="to">
+        <br/><br/>
+        <button>Search</button>
 
-             <div class="oneway">
-                    <input id="date" placeholder="mm/dd/yy">
-             </div>
 
     </form>
     </center>    
@@ -56,8 +54,23 @@
 <script src="{% static "QuickBooking/js/jquery-ui.min.js" %}"></script>
 
 <script>
-  $(document).ready(function() {
-    $("#date").datepicker();
+  $(function() {
+    $( "#from" ).datepicker({
+      defaultDate: "+1w",
+      changeMonth: true,
+      numberOfMonths: 1,
+      onClose: function( selectedDate ) {
+        $( "#to" ).datepicker( "option", "minDate", selectedDate );
+      }
+    });
+    $( "#to" ).datepicker({
+      defaultDate: "+1w",
+      changeMonth: true,
+      numberOfMonths: 1,
+      onClose: function( selectedDate ) {
+        $( "#from" ).datepicker( "option", "maxDate", selectedDate );
+      }
+    });
   });
   </script>
  
