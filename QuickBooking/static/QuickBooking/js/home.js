@@ -10,13 +10,8 @@ function checkTravelType(option) {
             $('#roundTrip').css("display", "none");
             break;
         case "Round Trip":
-            $('#roundTrip').css("display", "block");
+            $('#roundTrip').css("display", "inline-block");
             break;
     }
 }
 
-$('.your-container').datepicker({
-    beforeShow: function(input, datepickerInstance) {
-        datepickerInstance.dpDiv.css('font-size', '11px');
-    }
-});

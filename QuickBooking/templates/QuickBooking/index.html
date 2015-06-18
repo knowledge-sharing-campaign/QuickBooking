@@ -4,16 +4,20 @@
 <html>
 
 <head>
-    <title>QuickBooking</title>
+    <title>Home Page</title>
     <link rel="stylesheet" type="" href="{% static "QuickBooking/css/home.css" %}">
     <script type="text/javascript" src="{% static "QuickBooking/js/home.js" %}"></script>
     <link href="{% static "QuickBooking/css/jquery-ui.min.css" %}" rel="stylesheet" />
 </head>
 
 <body>
+    <div style="text-align: center;">
+        
+    </div>
     <img src="{% static "QuickBooking/images/logo.png" %}"/>
     <div class="welcomeMsg">
-        <h3> Your better choice for instant tickets &amp; faster travelling.</h3>
+    <br />
+    <h3> Your better choice for instant tickets &amp; faster travelling.</h3>
     </div>
     <br/>
     
@@ -32,41 +36,32 @@
             <option>{{ stop.stopname }}</option>
             {% endfor %}
         </select>
+        <button>Search</button>
+    <br/><br/>
+     
+             <input type="radio" name="trip" value="One way" onclick="checkTravelType(this);" checked>One Way</input>
+             <input type="radio" name="trip" value="Round Trip" onclick="checkTravelType(this);">Round Trip</input>
         
-    <br/><br/><br>
+             <br/><br/> 
 
-     <div class="tripSelection">
-        <input type="radio" name="travel_option" value="One Way" onclick="checkTravelType(this);" checked> One Way</input>
-        <div class="oneWay" name="date" id="oneWay"> </div>
-        <input type="radio" name="travel_option" value="Round Trip" onclick="checkTravelType(this);"> Round Trip</input>
-        <div class="roundTrip" name="date" id="roundTrip"></div>
-    </div>
+             <div class="oneway">
+                    <input id="date" placeholder="mm/dd/yy">
+             </div>
 
-    <div class="search"><button>Search</button></div>
     </form>
-    </center><br/>
+    </center>    
 
-<!-- <center> -->
-
-<form action="">
-   
-</form>
-<!-- </center> -->
-
+ 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
 <script src="{% static "QuickBooking/js/jquery-ui.min.js" %}"></script>
+
+<script>
+  $(document).ready(function() {
+    $("#date").datepicker();
+  });
+  </script>
  
-<script type="text/javascript">
-   defaultSelection();
+
 </script>
-<style>
-.ui-datepicker {
-    font-size:80%;
-}
-</style>
-
-
-
-<div id="footer" > Knowledge-Sharing-Campaign-Congo &#9830; INDIA &#9830; Email: KSC@gmail.com </div>
 </body>
 </html>

@@ -1,17 +1,18 @@
+.welcomeMsg{
+	text-align: center;
+	font-family:'Arial';
+	color:;
+}
 body{
+	color: ;
+	font-style:;
+	font-family: 'Verdana'; 
 	width: 100%;
 	margin: 0 ;
 	background-size: 100% , 100% ;
 	background-position: absolute;
 	background-repeat: no-repeat;
 	background-image: url("../images/background.jpg");
-}
-
-.welcomeMsg{
-	text-align: center;
-	font-family: italic;
-	color: white;
-	font-family: "Courier", "Poiret One";
 }
 
 .oneWay { 
@@ -26,20 +27,36 @@ body{
 
 .tripSelection{
 	position: absolute;
-	padding: 0px 330px 0em;
-	color: #e78f08 ;
-	font-family: "Poiret One";
-	font: bold;
-
 
 }
 
-.search{
-	padding: 200px 0px 0em;
-	text-align: center;
+ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
 }
 
-#footer{
-	padding: 200px 0px 0em;
-	text-align: center;
+li{
+	float: left;
+	display: inline-block;
+	width: 100px;
+	background-color: 
+}
+
+.BusList{
+    width: 100%;
+    color:;
+}
+
+table, th, td{
+	border-radius: 1px solid #ccc;
+	border-collapse: collapse;
+}
+td{
+	background-color:#b2b2b2;
+	color: white;
+}
+th{
+	background-color: #1a1a1a;
+	color:white;
 }

@@ -1,22 +1,41 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Search Results</title>
+    <link rel="stylesheet" type="" href="{% static "QuickBooking/css/home.css" %}">
 </head>
 <body>
     <div style="text-align: center;">
         <h1>Search Results</h1>
     </div>
 
-    <table border="1" style="width:100%">
+    <h3 style="text-align:center"></h3>
+
+ <table border="1" style="width:100%">
+     
+    <div class="BusList">
+     <tr>
+         <th>BUS COMPANY</th>
+         <th>BUS MAKER</th>
+         <th>BUS TYPE</th>
+         <th>MAX CAPACITY</th>
+     </tr>
         {% for route in bus_routes %}
-        <tr>
+         <tr>
             <td>{{ route.bus.company }}</td>
             <td>{{ route.bus.make }}</td>
-            <td>{{ route.bus.capacity }}</td>
             <td>{{ route.bus.type.type }}</td>
-        </tr>
+            <td>{{ route.bus.capacity }}</td>
+         </tr>
         {% endfor %}
+     </div>
     </table>
+
+<form onclick="window.history.back();" method="post">
+    <input type="button" value="Back">
+</form>
+
 </body>
 </html>
