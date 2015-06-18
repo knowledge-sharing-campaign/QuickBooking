@@ -1,13 +1,11 @@
-ø{% load staticfiles %}
+{% load staticfiles %}
 
 <!DOCTYPE html>
 <html>
 
 <head>
     <title>Home Page</title>
-    <link rel="stylesheet" type="" href="{% static "QuickBooking/css/home.css" %}">
-    <script type="text/javascript" src="{% static "QuickBooking/js/home.js" %}"></script>
-    <link href="{% static "QuickBooking/css/jquery-ui.min.css" %}" rel="stylesheet" />
+    <link rel="stylesheet" type="" href="{% static "QuickBooking/css/home.css" %}"> 
 </head>
 
 <body>
@@ -36,43 +34,31 @@
             <option>{{ stop.stopname }}</option>
             {% endfor %}
         </select>
-    
-    <br/><br/>
-     <label for="from">Date of journey</label>
-<input type="text" id="from" name="from">
-<label for="to">Date of Return(Optional)</label>
-<input type="text" id="to" name="to">
-        <br/><br/>
         <button>Search</button>
+    <br/><br/>
+     
+             <input type="radio" name="trip" value="One Way" onclick="checkTravelType(this);" checked>One Way</input>
+             <input type="radio" name="trip" value="Round Trip" onclick="checkTravelType(this);">Round Trip</input>
+        
+             <br/><br/> 
+
+            
+             <input id="form" placeholder="mm/dd/yy">
+             <input id="form2" placeholder="mm/dd/yy" class="roundtrip">
+             <div name="date" id="form"></div>
 
 
     </form>
     </center>    
 
  
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
-<script src="{% static "QuickBooking/js/jquery-ui.min.js" %}"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<!-- <link href="{% static "QuickBooking/css/jquery-ui.min.css" %}" rel="stylesheet" /> -->
 
-<script>
-  $(function() {
-    $( "#from" ).datepicker({
-      defaultDate: "+1w",
-      changeMonth: true,
-      numberOfMonths: 1,
-      onClose: function( selectedDate ) {
-        $( "#to" ).datepicker( "option", "minDate", selectedDate );
-      }
-    });
-    $( "#to" ).datepicker({
-      defaultDate: "+1w",
-      changeMonth: true,
-      numberOfMonths: 1,
-      onClose: function( selectedDate ) {
-        $( "#from" ).datepicker( "option", "maxDate", selectedDate );
-      }
-    });
-  });
-  </script>
+<script type="text/javascript" src="{% static "QuickBooking/js/home.js" %}"></script>
  
 
 </script>

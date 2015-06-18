@@ -1,19 +1,14 @@
-function defaultSelection() {
-	$('#oneWay').datepicker();
-    $('#roundTrip').datepicker();
-    $('#roundTrip').css("display", "none");
-}
+
+$(document).ready(function() {
+$('#form').datepicker();
+$('#form2').datepicker();
+$('#form2').css("display", "none");
+});
 
 function checkTravelType(option) {
-    switch(option.value) {
-        case "One Way":
-            $('#roundTrip').css("display", "none");
-            break;
-        case "Round Trip":
-            $('#roundTrip').css("display", "inline-block");
-            break;
-    }
+        if (option.value !== "Round Trip") {
+          $('#form2').css("display", "none");
+        } else 
+        $('#form2').css("display", "inline-block");
+
 }
-
-
-
