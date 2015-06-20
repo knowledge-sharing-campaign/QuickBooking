@@ -1,7 +1,7 @@
 
 $(document).ready(function() {
-$('#form').datepicker();
-$('#form2').datepicker();
+$('#form').datepicker({ minDate:0});
+$('#form2').datepicker({minDate:1});
 $('#form2').css("display", "none");
 });
 
@@ -12,3 +12,5 @@ function checkTravelType(option) {
         $('#form2').css("display", "inline-block");
 
 }
+
+// var dateLimit = $('#form').datepicker({ minDate:0});
