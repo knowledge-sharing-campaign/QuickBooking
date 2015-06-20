@@ -19,16 +19,24 @@
      <tr>
          <th>BUS COMPANY</th>
          <th>BUS MAKER</th>
-         <th>BUS TYPE</th>
          <th>MAX CAPACITY</th>
+         <th>BUS TYPE</th>
      </tr>
         {% for route in bus_routes %}
          <tr>
             <td>{{ route.bus.company }}</td>
-            <td>{{ route.bus.make }}</td>
-            <td>{{ route.bus.type.type }}</td>
+            <td>{{ route.bus.make }}</td> 
             <td>{{ route.bus.capacity }}</td>
+            <td>
+               <select>
+                  <option value = "BusType1" > Semi-sleeper A/C </option>
+                  <option value = "BusType2" > Semi-sleeper Non A/C</option>
+                  <option value = "BusType3" > sleeper AC  </option>
+                  <option value = "BusType4" > sleeper Non A/C </option>
+                </select>
+            </td>
          </tr>
+
         {% endfor %}
      </div>
     </table>
