@@ -1,9 +1,3 @@
-/*.logo{
-	width: 353px;
-	height: 75;
-*/
-}
-
 .welcomeMsg{
 	text-align: center;
 	font-family:'Arial';
@@ -19,6 +13,7 @@ body{
 	background-position: absolute;
 	background-repeat: no-repeat;
 	background-image: url("../images/bus2.jpg");
+	
 }
 .roundtrip {
 	display: none;

@@ -1,7 +1,5 @@
-
 $(document).ready(function() {
 $('#form').datepicker({ minDate:0});
-$('#form2').datepicker({minDate:1});
 $('#form2').css("display", "none");
 });
 
@@ -13,4 +11,8 @@ function checkTravelType(option) {
 
 }
 
-// var dateLimit = $('#form').datepicker({ minDate:0});
+function oneTripDate(){
+	var days = parseInt(($("#form").datepicker("getDate") - new Date())/1000/60/60/24);
+	$('#form2').datepicker({minDate: days +2});	
+}
+
