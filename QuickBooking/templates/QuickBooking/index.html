@@ -42,7 +42,7 @@
             <option>{{ stop.stopname }}</option>
             {% endfor %}
         </select> 
-        <button>Search</button>
+        
     <br/><br/>
      
              <input type="radio" name="trip" value="One Way" onclick="checkTravelType(this);" checked>One Way</input>
@@ -53,6 +53,9 @@
             
              <input id="form" placeholder="mm/dd/yy" onchange="oneTripDate();">
              <input id="form2" placeholder="mm/dd/yy" class="roundtrip">
+
+             <br/><br/>
+             <button>Search</button>
     </form>
     </center>    
 
