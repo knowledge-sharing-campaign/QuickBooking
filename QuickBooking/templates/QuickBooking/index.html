@@ -19,13 +19,12 @@
         
     </div>
 
-    <center>
-        <td><img src="{% static "QuickBooking/images/logo.png" %}"/></td>
-    </center>
-    
-    <br/>
+    <div class="logo1">
+        <img src="{% static "QuickBooking/images/logo3.png" %}" height="300" width="700"  />
+        </div>
     
     <center>
+    <div class="form">
     <form action="{% url 'QuickBooking:results' %}" method="post">
         {% csrf_token %}
         From:
@@ -44,6 +43,7 @@
         </select> 
         
     <br/><br/>
+
      
              <input type="radio" name="trip" value="One Way" onclick="checkTravelType(this);" checked>One Way</input>
              <input type="radio" name="trip" value="Round Trip" onclick="checkTravelType(this);">Round Trip</input>
@@ -57,6 +57,7 @@
              <br/><br/>
              <button>Search</button>
     </form>
+    </div>
     </center>    
 
 

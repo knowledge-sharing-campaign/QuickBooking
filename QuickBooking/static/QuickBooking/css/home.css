@@ -15,9 +15,7 @@ body{
 	background-image: url("../images/bus2.jpg");
 	
 }
-.roundtrip {
-	display: none;
-}
+
 
 .oneWay { 
 	float: left;
@@ -65,3 +63,12 @@ th{
 	color:white;
 }
 
+.logo1{
+	margin: -55px 280px 0em;
+	padding: -45px -5px 0em;
+}
+
+.form{
+	margin: -25px 0px 0em;
+	padding: 0px 0px 0em;
+}
