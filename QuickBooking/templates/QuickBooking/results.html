@@ -5,13 +5,67 @@
 <head>
     <title>Search Results</title>
     <link rel="stylesheet" type="" href="{% static "QuickBooking/css/home.css" %}">
+    <link rel="stylesheet" type="" href="{% static "QuickBooking/css/result.css" %}">
+    <link rel="stylesheet" type="" href="{% static "QuickBooking/css/menu.css" %}">
 </head>
 <body>
     <div style="text-align: center;">
         <h1>Search Results</h1>
     </div>
 
-    <h3 style="text-align:center"></h3>
+    <table style="width:100%" >
+    <tr>
+             <ul id="menu">
+        <li><a href="" onclick="window.history.back();" method="post">Home</a></li>
+        <li><a href="">Company</a>
+        <ul>
+        <li><a href="">Orange</a></li>
+        <li><a href="">mercedes</a></li>
+        <li><a href="">Neeta</a></li>
+        <li><a href="">Tata</a></li>
+        </ul>
+        </li>
+        <li><a href="">Bus Type</a>
+        <ul>
+        <li><a href="">Semi/SleeperAC</a></li>
+        <li><a href="">Semi/Sleeper</a></li>
+        <li><a href="">Sleeper/AC</a></li>
+        <LI><a href="">Sleeper</a></li>
+        </ul>
+        </li>
+        <li><a href="">Time</a>
+        <ul>
+        <li><a href="">12h-30</a></li>
+        <li><a href="">12h-45</a></li>
+        <li><a href="">14h-40</a></li>
+        <li><a href="">17h-30</a></li>
+        <li><a href="">15h-45</a></li>
+        </ul>
+        </li>
+        <li><a href="">Price</a>
+        <ul>
+        <li><a href="">1000rs</a></li>
+        <li><a href="">1500rs</a></li>
+        <li><a href="">2000rs</a></li>
+        <li><a href="">Else</a></li>
+        </ul>
+        </li>
+        <li><a href="">Amenities</a>
+        <ul>
+        <li><a href="">Wifi</a></li>
+        <li><a href="">News Paper</a></li>
+        <li><a href="">Food</a></li>
+        <li><a href="">Cinema</a></li>
+        </ul>
+        <li><a href="">Ratings</a>
+        <ul>
+        <li><a href="">Very Good</a></li>
+        <li><a href="">Good</a></li>
+        <li><a href="">Bad</a></li>
+        </ul>
+        
+    </tr>
+  </table>
 
  <table border="1" style="width:100%">
      
@@ -19,14 +73,12 @@
      <tr>
          <th>BUS COMPANY</th>
          <th>BUS MAKER</th>
-         <th>MAX CAPACITY</th>
          <th>BUS TYPE</th>
      </tr>
         {% for route in bus_routes %}
          <tr>
             <td>{{ route.bus.company }}</td>
             <td>{{ route.bus.make }}</td> 
-            <td>{{ route.bus.capacity }}</td>
             <td>
                <select>
                   <option value = "BusType1" > Semi-sleeper A/C </option>
