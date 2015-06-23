@@ -33,6 +33,16 @@
         <LI><a href="">Sleeper</a></li>
         </ul>
         </li>
+        <li><a href="">Boarding Point</a>
+        <ul>
+        <li><a href="">Galaxy</a></li>
+        <li><a href="">Mehdipatnam</a></li>
+        </ul>
+        <li><a href="">Dropping Point</a>
+        <ul>
+        <li><a href="">Airport</a></li>
+        </ul>
+        </li>
         <li><a href="">Time</a>
         <ul>
         <li><a href="">12h-30</a></li>
@@ -74,6 +84,7 @@
          <th>BUS COMPANY</th>
          <th>BUS MAKER</th>
          <th>BUS TYPE</th>
+         <th></th>
      </tr>
         {% for route in bus_routes %}
          <tr>
@@ -87,6 +98,7 @@
                   <option value = "BusType4" > sleeper Non A/C </option>
                 </select>
             </td>
+            <td><button>Select Seats</button></td>
          </tr>
 
         {% endfor %}
