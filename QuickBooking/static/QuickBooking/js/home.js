@@ -16,26 +16,24 @@ function oneTripDate(){
 	$('#form2').datepicker({minDate: days +2});	
 }
 
-function autocompleteCities(busRoutes){
+function autocompleteFrom(busRoutes){
+  loadAutocomplete("#from", busRoutes);
+}
+
+function autocompleteTo(busRoutes){
+  removeSource(busRoutes);
+  loadAutocomplete("#to", busRoutes);
+}
+
+function removeSource(busRoutes) {
+   var source = document.querySelector("#from").value;
+   busRoutes.splice(busRoutes.indexOf(source), 1);
+}
+
+function loadAutocomplete (id, busRoutes) {
   $(function() {
-  	$("#from").autocomplete({
+    $(id).autocomplete({
       source: busRoutes
     });
   });
-
-  $(function() {
-      $("#to").autocomplete({
-        source: busRoutes
-      });
-  });
-}
-
-function validate() {
-  var source = document.querySelector("#from").value
-  var destination = document.querySelector("#to").value
-
-  if (source === destination) {
-    alert("The departure city should not be same as the destination city.");
-
-  }
 }

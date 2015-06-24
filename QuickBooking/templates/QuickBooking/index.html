@@ -28,9 +28,9 @@
         {% csrf_token %}
         <div>
             <label for="from">From </label>
-            <input id="from" name="src" placeholder="Departure city">
+            <input id="from" name="src" onclick="autocompleteFrom({{bus_stop_names}});" placeholder="Departure city">
             <label for="to">To </label>
-            <input id="to" name="dest" placeholder="Destination city">
+            <input id="to" name="dest" onclick="autocompleteTo({{bus_stop_names}});" placeholder="Destination city">
         </div>
     <br/><br/>
 
@@ -60,10 +60,6 @@
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 <script type="text/javascript" src="{% static "QuickBooking/js/home.js" %}"></script>
-<script type="text/javascript">
-    var busRoutes = {{ bus_stop_names | safe}};
-    autocompleteCities(busRoutes);
-</script>
 
 </body>
 </html>
