@@ -9,11 +9,18 @@
     <link rel="stylesheet" type="" href="{% static "QuickBooking/css/menu.css" %}">
 </head>
 <body>
+     <table>
+        <tr>
+            <td>
+        <img src="{% static "QuickBooking/images/logo3.png" %}" height="110"/>
+        </tr>
+            </td>
+    <table>
     <div style="text-align: center;">
-        <h1>Search Results</h1>
+        <p>Search Results</p>
     </div>
 
-    <table style="width:100%" >
+    <!-- <table style="width:100%" >
     <tr>
              <ul id="menu">
         <li><a href="" onclick="window.history.back();" method="post">Home</a></li>
@@ -75,7 +82,7 @@
         </ul>
         
     </tr>
-  </table>
+  </table> -->
 
  <table border="1" style="width:100%">
      
@@ -84,7 +91,7 @@
          <th>BUS COMPANY</th>
          <th>BUS MAKER</th>
          <th>BUS TYPE</th>
-         <th></th>
+         <th>Select Seats</th>
      </tr>
         {% for route in bus_routes %}
          <tr>

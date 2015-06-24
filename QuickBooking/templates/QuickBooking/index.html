@@ -20,6 +20,9 @@
     </div>
 
     <center>
+    <table border="0">
+        <tr>
+            <td>
     <div class="form">
     <form action="{% url 'QuickBooking:results' %}" method="post">
         {% csrf_token %}
@@ -29,7 +32,7 @@
             {% for stop in bus_stop_list %}
             <option>{{ stop.stopname }}</option>
             {% endfor %}
-        </select>
+        </select> &nbsp; &nbsp;
         To:
         <select name="dest">
         <option selected="selected">Select a city</option>
@@ -40,7 +43,7 @@
         
     <br/><br/>
 
-     
+     <center>
              <input type="radio" name="trip" value="One Way" onclick="checkTravelType(this);" checked>One Way</input>
              <input type="radio" name="trip" value="Round Trip" onclick="checkTravelType(this);">Round Trip</input>
         
@@ -54,6 +57,10 @@
              <button>Search</button>
     </form>
     </div>
+    </center>
+            </td>
+        </tr>
+    </table>
     </center>    
 
 
