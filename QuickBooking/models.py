@@ -1,4 +1,11 @@
 from django.db import models
+from django.utils import timezone
+
+class Passenger(models.Model):
+    first_name = models.CharField(max_length=20)
+    last_name = models.CharField(max_length=20)
+    email = models.EmailField()
+    Phone = models.IntegerField()
 
 class BusType(models.Model):
     type = models.CharField(primary_key=True, max_length=20)
@@ -21,10 +28,19 @@ class BusStop(models.Model):
     def __unicode__(self):
         return self.stopname
 
+class Timing(models.Model):
+    depart = models.DateTimeField(default=timezone.now, blank=True)
+    arrival = models.DateTimeField(default=timezone.now, blank=True)
+
+    def __unicode__(self):
+        return "depart: %s arival: %s" % (str(self.depart), str(self.arrival))
+
 class BusRoute(models.Model):
     src = models.ForeignKey(BusStop, related_name="source")
     dest = models.ForeignKey(BusStop, related_name="destination")
     bus = models.ForeignKey(Bus)
+    timing = models.ForeignKey(Timing)
 
     def __unicode__(self):
         return "%s -> %s >>> %s" % (self.src, self.dest, self.bus)
+    

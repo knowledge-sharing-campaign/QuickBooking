@@ -26,25 +26,18 @@
     <div class="form">
     <form action="{% url 'QuickBooking:results' %}" method="post">
         {% csrf_token %}
-        From:
-        <select name="src">
-        <option selected="selected">Select a city</option>
-            {% for stop in bus_stop_list %}
-            <option>{{ stop.stopname }}</option>
-            {% endfor %}
-        </select> &nbsp; &nbsp;
-        To:
-        <select name="dest">
-        <option selected="selected">Select a city</option>
-            {% for stop in bus_stop_list %}
-            <option>{{ stop.stopname }}</option>
-            {% endfor %}
-        </select> 
-        
+        <div>
+            <label for="from">From: </label>
+            <input id="from" name="src" placeholder="Enter a departure City...">
+            <label for="to">To: </label>
+            <input id="to" name="dest" placeholder="Enter an Arrival City...">
+            <button >Search</button>
+        </div>
     <br/><br/>
 
      <center>
              <input type="radio" name="trip" value="One Way" onclick="checkTravelType(this);" checked>One Way</input>
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
              <input type="radio" name="trip" value="Round Trip" onclick="checkTravelType(this);">Round Trip</input>
         
              <br/><br/> 
