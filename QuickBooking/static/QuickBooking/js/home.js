@@ -16,4 +16,26 @@ function oneTripDate(){
 	$('#form2').datepicker({minDate: days +2});	
 }
 
+function autocompleteCities(busRoutes){
+  $(function() {
+  	$("#from").autocomplete({
+      source: busRoutes
+    });
+  });
 
+  $(function() {
+      $("#to").autocomplete({
+        source: busRoutes
+      });
+  });
+}
+
+function validate() {
+  var source = document.querySelector("#from").value
+  var destination = document.querySelector("#to").value
+
+  if (source === destination) {
+    alert("The departure city should not be same as the destination city.");
+
+  }
+}

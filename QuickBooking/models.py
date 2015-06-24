@@ -40,6 +40,7 @@ class BusRoute(models.Model):
     dest = models.ForeignKey(BusStop, related_name="destination")
     bus = models.ForeignKey(Bus)
     timing = models.ForeignKey(Timing)
+    cost = models.IntegerField(default=1000)
 
     def __unicode__(self):
         return "%s -> %s >>> %s" % (self.src, self.dest, self.bus)
