@@ -18,7 +18,6 @@ def index(request):
 
 def results(request):
     bus_routes = BusRoute.objects.filter(src=request.POST['src'], dest=request.POST['dest'])
-
     template = loader.get_template('QuickBooking/results.html')
     context = RequestContext(request, {
         'bus_routes': bus_routes

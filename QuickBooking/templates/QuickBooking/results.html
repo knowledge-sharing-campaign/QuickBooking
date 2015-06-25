@@ -23,6 +23,8 @@
          <th>BUS COMPANY</th>
          <th>BUS MAKER</th>
          <th>BUS TYPE</th>
+         <th>TIMING</th>
+         <th>COST</th>
          <th>Select Seats</th>
      </tr>
         {% for route in bus_routes %}
@@ -37,6 +39,8 @@
                   <option value = "BusType4" > sleeper Non A/C </option>
                 </select>
             </td>
+            <td>{{ route.timing.depart }}-{{ route.timing.arrival }}</td>
+            <th>{{ route.cost }} Rs</th>
             <td><button>Select Seats</button></td>
          </tr>
 
