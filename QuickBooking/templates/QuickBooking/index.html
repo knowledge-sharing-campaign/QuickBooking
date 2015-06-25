@@ -24,7 +24,11 @@
         <tr>
             <td>
     <div class="form">
+<<<<<<< HEAD
     <form action="{% url 'QuickBooking:results' %}" method="post">
+=======
+    <form action="{% url 'QuickBooking:results' %}" method="post" >
+>>>>>>> Jeremias, Farel |#6| , Settings buses according to date (One way).
         {% csrf_token %}
         <div>
             <label for="from">From </label>
@@ -43,8 +47,13 @@
              <br/><br/> 
 
             
+<<<<<<< HEAD
              <input id="form" placeholder="mm/dd/yy" onchange="oneTripDate();" required>
              <input id="form2" placeholder="mm/dd/yy" class="roundtrip" >
+=======
+             <input id="form" name="FirstDate" placeholder="mm/dd/yy" onchange="oneTripDate();">
+             <input id="form2" name="SecondDate" placeholder="mm/dd/yy" class="roundtrip">
+>>>>>>> Jeremias, Farel |#6| , Settings buses according to date (One way).
 
              <br/><br/>
              <button>Search</button>

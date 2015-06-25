@@ -29,11 +29,10 @@ class BusStop(models.Model):
         return self.stopname
 
 class Timing(models.Model):
-    depart = models.DateTimeField(default=timezone.now, blank=True)
-    arrival = models.DateTimeField(default=timezone.now, blank=True)
+    date = models.DateTimeField(default=timezone.now, blank=True)
 
     def __unicode__(self):
-        return "depart: %s arival: %s" % (str(self.depart), str(self.arrival))
+        return "date: %s " % (str(self.date))
 
 class BusRoute(models.Model):
     src = models.ForeignKey(BusStop, related_name="source")
