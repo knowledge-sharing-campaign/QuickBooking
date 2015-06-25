@@ -28,7 +28,7 @@
         {% csrf_token %}
         <div>
             <label for="from">From </label>
-            <input id="from" name="src" placeholder="Departure city">&nbsp;&nbsp;
+            <input id="from" name="src" onclick="autocompleteFrom({{bus_stop_names}});" placeholder="Departure city">
 
             <label for="to">To </label>
             <input id="to" name="dest" onclick="autocompleteTo({{bus_stop_names}});" placeholder="Destination city">
