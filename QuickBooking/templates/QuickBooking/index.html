@@ -24,27 +24,27 @@
         <tr>
             <td>
     <div class="form">
-    <form action="{% url 'QuickBooking:results' %}" method="post" onsubmit="validate();">
+    <form action="{% url 'QuickBooking:results' %}" method="post">
         {% csrf_token %}
         <div>
             <label for="from">From </label>
-            <input id="from" name="src" onclick="autocompleteFrom({{bus_stop_names}});" placeholder="Departure city">
+            <input id="from" name="src" onclick="autocompleteFrom({{bus_stop_names}});" placeholder="Departure city" required>
 
             <label for="to">To </label>
-            <input id="to" name="dest" onclick="autocompleteTo({{bus_stop_names}});" placeholder="Destination city">
+            <input id="to" name="dest" onclick="autocompleteTo({{bus_stop_names}});" placeholder="Destination city" required>
         </div>
     <br/><br/>
 
      <center>
              <input type="radio" name="trip" value="One Way" onclick="checkTravelType(this);" checked>One Way</input>
              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-             <input type="radio" name="trip" value="Round Trip" onclick="checkTravelType(this);">Round Trip</input>
+             <input type="radio" name="trip" value="Round Trip" onclick="checkTravelType(this);" >Round Trip</input>
         
              <br/><br/> 
 
             
-             <input id="form" placeholder="mm/dd/yy" onchange="oneTripDate();">
-             <input id="form2" placeholder="mm/dd/yy" class="roundtrip">
+             <input id="form" placeholder="mm/dd/yy" onchange="oneTripDate();" required>
+             <input id="form2" placeholder="mm/dd/yy" class="roundtrip" >
 
              <br/><br/>
              <button>Search</button>
