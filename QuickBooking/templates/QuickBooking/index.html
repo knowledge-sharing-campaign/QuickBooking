@@ -15,7 +15,7 @@
 <body>
     <center>
     <div class="logo1">
-        <img src="{% static "QuickBooking/images/logo3.png" %}" height="300" width="700"  />
+        <img src="{% static "QuickBooking/images/logo3.png" %}" height="280" width="700"  />
     </div>
     </center>
 
@@ -24,36 +24,26 @@
         <tr>
             <td>
     <div class="form">
-<<<<<<< HEAD
-    <form action="{% url 'QuickBooking:results' %}" method="post">
-=======
     <form action="{% url 'QuickBooking:results' %}" method="post" >
->>>>>>> Jeremias, Farel |#6| , Settings buses according to date (One way).
         {% csrf_token %}
         <div>
             <label for="from">From </label>
-            <input id="from" name="src" onclick="autocompleteFrom({{bus_stop_names}});" placeholder="Departure city" required>
-
+            <input id="from" name="src" onclick="autocompleteFrom({{bus_stop_names}});" placeholder="Departure city">
             <label for="to">To </label>
-            <input id="to" name="dest" onclick="autocompleteTo({{bus_stop_names}});" placeholder="Destination city" required>
+            <input id="to" name="dest" onclick="autocompleteTo({{bus_stop_names}});" placeholder="Destination city">
         </div>
     <br/><br/>
 
      <center>
              <input type="radio" name="trip" value="One Way" onclick="checkTravelType(this);" checked>One Way</input>
              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-             <input type="radio" name="trip" value="Round Trip" onclick="checkTravelType(this);" >Round Trip</input>
+             <input type="radio" name="trip" value="Round Trip" onclick="checkTravelType(this);">Round Trip</input>
         
              <br/><br/> 
 
             
-<<<<<<< HEAD
-             <input id="form" placeholder="mm/dd/yy" onchange="oneTripDate();" required>
-             <input id="form2" placeholder="mm/dd/yy" class="roundtrip" >
-=======
              <input id="form" name="FirstDate" placeholder="mm/dd/yy" onchange="oneTripDate();">
              <input id="form2" name="SecondDate" placeholder="mm/dd/yy" class="roundtrip">
->>>>>>> Jeremias, Farel |#6| , Settings buses according to date (One way).
 
              <br/><br/>
              <button>Search</button>
