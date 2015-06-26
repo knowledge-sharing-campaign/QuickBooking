@@ -84,8 +84,8 @@
          <th>BUS TYPE</th>
          <th>TIMING</th>
          <th>COST</th>
-         <th>SEAT SELECTION</th>
          <th>RATING</th>
+         <th>SEAT SELECTION</th>
      </tr>
         {% for route in bus_routes %}
          <tr>
@@ -101,13 +101,13 @@
             </td>
             <td>{{ route.timing.date }}</td>
             <th>{{ route.cost }} Rs</th>
+            <td><div class="rating">
+<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+</div></td>
             <td><form onclick="" method="post">
                      <button type="submit" class="btn btn-default">Select seat</button>
                 </form>
             </td>
-            <td><div class="rating">
-<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-</div></td>
          </tr>
 
         {% endfor %}
