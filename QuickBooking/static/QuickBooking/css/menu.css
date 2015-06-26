@@ -43,8 +43,6 @@
 	position: absolute;
 	top: 2em; left: 0;
 	max-height: 0em;
-	margin: 0; 
-	padding: 0;
 	background-color: #ddd;
 	background-image: linear-gradient(#fff,#ddd);
 	overflow: hidden;
@@ -55,11 +53,17 @@
 	max-height: 13em;
 }
 
-.body {
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: 100%;
-	margin: 0;
-	
-
+/*.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+*/.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
 }

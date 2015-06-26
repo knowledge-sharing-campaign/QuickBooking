@@ -18,20 +18,21 @@
      <center>
         <img src="{% static "QuickBooking/images/logo3.png" %}" height="110"/>
     </center>
-    <div style="text-align: center;">
-        <h3>Available Buses For : </h3>
-    </div>
+
+    <form onclick="window.history.back();" method="post">
+    <button type="submit" class="btn btn-default">Back</button>
+</form>
 
     <table style="width:100%" align="center">
  <tr>
              <ul class="menu">
-        <li><a href="" onclick="window.history.back();" method="post">Home</a></li>
+        <li><a method="post">Filter By :</a></li>
         <li><a href="#">Company</a>
         <ul>
-        <li><a href="#">Orange</a></li>
-        <li><a href="#">mercedes</a></li>
-        <li><a href="#">Neeta</a></li>
-        <li><a href="#">Tata</a></li>
+        <li><a href="#">Orange Travels</a></li>
+        <li><a href="#">Bangalore M.T.C</a></li>
+        <li><a href="#">Bandra Bus Company</a></li>
+        <li><a href="#">BEST Transport Division</a></li>
         </ul>
         </li>
         <li><a href="#">Bus Type</a>
@@ -44,11 +45,9 @@
         </li>
         <li><a href="#">Time</a>
         <ul>
-        <li><a href="#">12h-30</a></li>
-        <li><a href="#">12h-45</a></li>
-        <li><a href="#">14h-40</a></li>
-        <li><a href="#">17h-30</a></li>
-        <li><a href="#">15h-45</a></li>
+        <li><a href="#">00h-30</a></li>
+        <li><a href="#">09h-45</a></li>
+        <li><a href="#">19h-40</a></li>
         </ul>
         </li>
         <li><a href="#">Price</a>
@@ -75,7 +74,6 @@
         
     </tr>
   </table>
-  
 
     <hr>
 
@@ -87,6 +85,7 @@
          <th>TIMING</th>
          <th>COST</th>
          <th>SEAT SELECTION</th>
+         <th>RATING</th>
      </tr>
         {% for route in bus_routes %}
          <tr>
@@ -106,15 +105,14 @@
                      <button type="submit" class="btn btn-default">Select seat</button>
                 </form>
             </td>
+            <td><div class="rating">
+<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+</div></td>
          </tr>
 
         {% endfor %}
      </div>
     </table>
-
-<form onclick="window.history.back();" method="post">
-    <button type="submit" class="btn btn-default">Back</button>
-</form>
 
 </body>
 </html>
