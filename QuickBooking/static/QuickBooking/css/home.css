@@ -7,12 +7,12 @@ body{
 	color: ;
 	font-style:;
 	font-family: 'Verdana'; 
+	height: 100%;
 	width: 100%;
 	margin: 0 ;
 	background-size: 100% , 100% ;
-	background-position: absolute;
 	background-repeat: no-repeat;
-	background-image: url("../images/bus2.jpg");
+	background-image: url("../images/way3.jpeg");
 	
 }
 
@@ -45,22 +45,11 @@ li{
 	background-color: 
 }
 
-.BusList{
-    width: 100%;
-    color:;
-}
-
-table, th, td{
-	border-radius: 1px solid #ccc;
-	border-collapse: collapse;
-}
-td{
-	background-color:#b2b2b2;
-	color: white;
-}
-th{
-	background-color: #1a1a1a;
-	color:white;
+.table{
+	margin: 0 auto ;
+    border-radius: 10px;
+	background-color: rgba(128,128,128,0.5);
+	box-shadow: -1px 2px 2px 1px rgba(0, 0, 0, 1);
 }
 
 .logo1{
@@ -69,7 +58,11 @@ th{
 }
 
 .form{
-	margin: -25px 0px 0em;
-	padding: 0px 0px 0em;
+	width: 40%;
+	padding: 40px;
+	margin: 0 auto ;
+    border-radius: 10px;
+	background-color: rgba(128,128,128,0.5);
+	box-shadow: -1px 2px 2px 1px rgba(0, 0, 0, 1);
 }
 

@@ -7,8 +7,12 @@
 
     <title>QuickBooking</title>
     <link rel="stylesheet" type="" href="{% static "QuickBooking/css/home.css" %}">
-    <script type="text/javascript" src="{% static "QuickBooking/js/home.js" %}"></script>
+    <link rel="stylesheet" type="" href="{% static "QuickBooking/css/bootstrap.css" %}">
+    <link rel="stylesheet" type="" href="{% static "QuickBooking/css/bootstrap.min.css" %}">
     <link href="{% static "QuickBooking/css/jquery-ui.min.css" %}" rel="stylesheet" />
+    <script type="text/javascript" src="{% static "QuickBooking/js/home.js" %}"></script>
+    <script type="text/javascript" src="{% static "QuickBooking/js/bootstrap.js" %}"></script>
+    <script type="text/javascript" src="{% static "QuickBooking/js/bootstrap.min.js" %}"></script>
 
 </head>
 
@@ -20,22 +24,20 @@
     </center>
 
     <center>
-    <table border="0">
-        <tr>
-            <td>
-    <div class="form">
-    <form action="{% url 'QuickBooking:results' %}" method="post">
-        {% csrf_token %}
-        <div>
-            <label for="from">From </label>
-            <input id="from" name="src" onclick="autocompleteFrom({{bus_stop_names}});" placeholder="Departure city" required>
 
+    <div class="form">
+    <form action="{% url 'QuickBooking:results' %}" method="post" class="form-inline">
+     <div class="form-group">
+        {% csrf_token %}
+    
+            <label for="from">From </label>
+            <input id="from" name="src" onclick="autocompleteFrom({{bus_stop_names}});" placeholder="Departure city" class="form-control" required>
+           
             <label for="to">To </label>
-            <input id="to" name="dest" onclick="autocompleteTo({{bus_stop_names}});" placeholder="Destination city" required>
-        </div>
+            <input id="to" name="dest" onclick="autocompleteTo({{bus_stop_names}});" placeholder="Destination city" class="form-control" required>
+    
     <br/><br/>
 
-     <center>
              <input type="radio" name="trip" value="One Way" onclick="checkTravelType(this);" checked>One Way</input>
              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
              <input type="radio" name="trip" value="Round Trip" onclick="checkTravelType(this);" >Round Trip</input>
@@ -43,18 +45,20 @@
              <br/><br/> 
 
             
-             <input id="form" placeholder="mm/dd/yy" onchange="oneTripDate();" required>
-             <input id="form2" placeholder="mm/dd/yy" class="roundtrip" >
+             <input id="form" name ="FirstDate" placeholder="mm/dd/yy" class="form-control" onchange="oneTripDate();" autocomplete="off" required>
+             <input id="form2" name ="SecondDate" placeholder="mm/dd/yy" class="form-control"  class="roundtrip" autocomplete="off" >
 
              <br/><br/>
-             <button>Search</button>
+      
+             <div class="form-group">
+            <div class="col-sm-offset-0 col-sm-12">
+              <button type="submit" class="btn btn-default">Search</button>
+            </div>
+          </div>
     </form>
+
     </div>
-    </center>
-            </td>
-        </tr>
-    </table>
-    </center>    
+     </center>    
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
