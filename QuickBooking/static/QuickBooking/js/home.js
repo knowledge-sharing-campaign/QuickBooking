@@ -38,8 +38,3 @@ function loadAutocomplete (id, busRoutes) {
   });
 }
 
-$(window).bind("pageshow", function() {
-    var form = $('form', 'form2', 'from', 'to'); 
-    // let the browser natively reset defaults
-    form[0].reset();
-});

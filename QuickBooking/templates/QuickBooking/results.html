@@ -1,113 +1,468 @@
 {% load staticfiles %}
 
+
 <!DOCTYPE html>
 <html>
-<head>
-    <title>QuickBooking | Results </title>
-    <link rel="stylesheet" type="" href="{% static "QuickBooking/css/home.css" %}">
-    <link rel="stylesheet" type="" href="{% static "QuickBooking/css/bootstrap.css" %}">
-    <link rel="stylesheet" type="" href="{% static "QuickBooking/css/bootstrap.min.css" %}">
-    <link href="{% static "QuickBooking/css/jquery-ui.min.css" %}" rel="stylesheet" />
-    <script type="text/javascript" src="{% static "QuickBooking/js/home.js" %}"></script>
-    <link rel="stylesheet" type="" href="{% static "QuickBooking/css/result.css" %}">
-    <link rel="stylesheet" type="" href="{% static "QuickBooking/css/menu.css" %}">
-    <script type="text/javascript" src="{% static "QuickBooking/js/bootstrap.js" %}"></script>
-    <script type="text/javascript" src="{% static "QuickBooking/js/bootstrap.min.js" %}"></script>
-</head>
-<body>
-        <img src="{% static "QuickBooking/images/logo3.png" %}" height="110"/>
-
-    <table style="width:100%" align="center">
- <tr>
-             <ul class="menu">
-        <li><a href="document.location.href="/";" method="post" class="back">BACK</a></li>
-        <li><a method="post">Filter By :</a></li>
-        <li><a href="#">Company</a>
-        <ul>
-        <li><a href="#">Orange Travels</a></li>
-        <li><a href="#">Bangalore M.T.C</a></li>
-        <li><a href="#">Bandra Bus Company</a></li>
-        <li><a href="#">BEST Transport Division</a></li>
-        </ul>
-        </li>
-        <li><a href="#">Bus Type</a>
-        <ul>
-        <li><a href="#">Semi/SleeperAC</a></li>
-        <li><a href="#">Semi/Sleeper</a></li>
-        <li><a href="#">Sleeper/AC</a></li>
-        <LI><a href="#">Sleeper</a></li>
-        </ul>
-        </li>
-        <li><a href="#">Time</a>
-        <ul>
-        <li><a href="#">00h-30</a></li>
-        <li><a href="#">09h-45</a></li>
-        <li><a href="#">19h-40</a></li>
-        </ul>
-        </li>
-        <li><a href="#">Price</a>
-        <ul>
-        <li><a href="#">1000rs</a></li>
-        <li><a href="#">1500rs</a></li>
-        <li><a href="#">2000rs</a></li>
-        <li><a href="#">Else</a></li>
-        </ul>
-        </li>
-        <li><a href="#">Amenities</a>
-        <ul>
-        <li><a href="#">Wifi</a></li>
-        <li><a href="#">News Paper</a></li>
-        <li><a href="#">Food</a></li>
-        <li><a href="#">Cinema</a></li>
-        </ul>
-        <li><a href="#">Ratings</a>
-        <ul>
-        <li><a href="#">Very Good</a></li>
-        <li><a href="#">Good</a></li>
-        <li><a href="#">Bad</a></li>
-        </ul>
-
-    </tr>
-  </table>
-
-    <hr>
-
- <table style="width:100%" class="table">
-     <tr>
-         <th>BUS COMPANY</th>
-         <th>BUS MAKER</th>
-         <th>BUS TYPE</th>
-         <th>TIMING</th>
-         <th>COST</th>
-         <th>RATING</th>
-         <th>SEAT SELECTION</th>
-     </tr>
-        {% for route in bus_routes %}
-         <tr>
-            <td>{{ route.bus.company }}</td>
-            <td>{{ route.bus.make }}</td>
-            <td>
-               <select>
-                  <option value = "BusType1" > Semi-sleeper A/C </option    >
-                  <option value = "BusType2" > Semi-sleeper Non A/C</option>
-                  <option value = "BusType3" > sleeper AC  </option>
-                  <option value = "BusType4" > sleeper Non A/C </option>
-                </select>
-            </td>
-            <td>{{ route.timing.date }}</td>
-            <th>{{ route.cost }} Rs</th>
-            <td><div class="rating">
-<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-</div></td>
-            <td><form onclick="" method="post">
-                     <button type="submit" class="btn btn-default">Select seat</button>
-                </form>
-            </td>
-         </tr>
-
-        {% endfor %}
-     </div>
-    </table>
-
-</body>
-</html>
+    <head>
+        <title>QuickBooking | Results </title>
+        <link rel="stylesheet" type="" href="{% static "QuickBooking/css/home.css" %}">
+            <link rel="stylesheet" type="" href="{% static "QuickBooking/css/selectSeat.css" %}">
+                <link rel="stylesheet" type="" href="{% static "QuickBooking/css/bootstrap.css" %}">
+                    <link rel="stylesheet" type="" href="{% static "QuickBooking/css/bootstrap.min.css" %}">
+                        <link href="{% static "QuickBooking/css/jquery-ui.min.css" %}" rel="stylesheet" />
+                        <script type="text/javascript" src="{% static "QuickBooking/js/jquery.js" %}"></script>
+                        <script type="text/javascript" src="{% static "QuickBooking/js/selectSeat.js" %}"></script>
+                        <script type="text/javascript" src="{% static "QuickBooking/js/home.js" %}"></script>
+                        <link rel="stylesheet" type="" href="{% static "QuickBooking/css/result.css" %}">
+                            <link rel="stylesheet" type="" href="{% static "QuickBooking/css/menu.css" %}">
+                                <script type="text/javascript" src="{% static "QuickBooking/js/bootstrap.js" %}"></script>
+                            </head>
+                            <body>
+                                <img src="{% static "QuickBooking/images/logo3.png" %}" height="110"/>
+                                <table style="width:100%" align="center">
+                                    <tr>
+                                        <ul class="menu">
+                                            <li>
+                                                <a href="document.location.href="/";" method="post" class="back">BACK</a>
+                                            </li>
+                                            <li>
+                                                <a method="post">Filter By :</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Company</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">Orange Travels</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Bangalore M.T.C</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Bandra Bus Company</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">BEST Transport Division</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="#">Bus Type</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">Semi/SleeperAC</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Semi/Sleeper</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Sleeper/AC</a>
+                                                    </li>
+                                                    <LI>
+                                                        <a href="#">Sleeper</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="#">Time</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">00h-30</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">09h-45</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">19h-40</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="#">Price</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">1000rs</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">1500rs</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">2000rs</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Else</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="#">Amenities</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">Wifi</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">News Paper</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Food</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Cinema</a>
+                                                    </li>
+                                                </ul>
+                                                <li>
+                                                    <a href="#">Ratings</a>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#">Very Good</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">Good</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">Bad</a>
+                                                        </li>
+                                                    </ul>
+                                                </tr>
+                                            </table>
+                                            <hr>
+                                                <div class="selectedRoute">
+                                                    <h1>{{ header }}</h1>
+                                                </div>
+                                                <br />
+                                                <table style="width:100%" class="table">
+                                                    <tr>
+                                                        <th>BUS COMPANY</th>
+                                                        <th>BUS MAKER</th>
+                                                        <th>BUS TYPE</th>
+                                                        <th>TIMING</th>
+                                                        <th>COST</th>
+                                                        <th>RATING</th>
+                                                        <th>SEAT SELECTION</th>
+                                                    </tr>
+                                                    {% for route in bus_routes %}
+                                                    <tr>
+                                                        <td>{{ route.bus.company }}</td>
+                                                        <td>{{ route.bus.make }}</td>
+                                                        <td>
+                                                            <select>
+                                                                <option value = "BusType1" > Semi-sleeper A/C </option    >
+                                                                <option value = "BusType2" > Semi-sleeper Non A/C</option>
+                                                                <option value = "BusType3" > sleeper AC  </option>
+                                                                <option value = "BusType4" > sleeper Non A/C </option>
+                                                            </select>
+                                                        </td>
+                                                        <td>{{ route.timing.date }}</td>
+                                                        <th>{{ route.cost }} Rs</th>
+                                                        <td>
+                                                            <div class="rating">
+                                                                <span>☆</span>
+                                                                <span>☆</span>
+                                                                <span>☆</span>
+                                                                <span>☆</span>
+                                                                <span>☆</span>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <button class="btn btn-default" data-toggle="modal" data-target="#myModal-1">Select seat</button>
+                                                            <td>
+                                                                <!-- Modal -->
+                                                                <div class="modal fade" id="myModal-1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                                                    <div class="modal-dialog" role="document">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                    <span aria-hidden="true">&times;</span>
+                                                                                </button>
+                                                                                <h4 class="modal-title" id="myModalLabel">Seat Selection</h4>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                <div id="holder">
+                                                                                    <ul  id="place"></ul>
+                                                                                    <ul id="place">
+                                                                                        <li class="seat row-0 col-0" style="top:0px;left:0px">
+                                                                                            <a title="1">1</a>
+                                                                                        </li>
+                                                                                        <li class="seat row-0 col-1" style="top:0px;left:35px">
+                                                                                            <a title="6">6</a>
+                                                                                        </li>
+                                                                                        <li class="seat row-0 col-2" style="top:0px;left:70px">
+                                                                                            <a title="11">11</a>
+                                                                                        </li>
+                                                                                        <li class="seat row-0 col-3" style="top:0px;left:105px">
+                                                                                            <a title="16">16</a>
+                                                                                        </li>
+                                                                                        <li class="seat row-0 col-4" style="top:0px;left:140px">
+                                                                                            <a title="21">21</a>
+                                                                                        </li>
+                                                                                        <li class="seat row-0 col-5" style="top:0px;left:175px">
+                                                                                            <a title="26">26</a>
+                                                                                        </li>
+                                                                                        <li class="seat row-0 col-6" style="top:0px;left:210px">
+                                                                                            <a title="31">31</a>
+                                                                                        </li>
+                                                                                        <li class="seat row-0 col-7" style="top:0px;left:245px">
+                                                                                            <a title="36">36</a>
+                                                                                        </li>
+                                                                                        <li class="seat row-0 col-8" style="top:0px;left:280px">
+                                                                                            <a title="41">41</a>
+                                                                                        </li>
+                                                                                        <li class="seat row-0 col-9" style="top:0px;left:315px">
+                                                                                            <a title="46">46</a>
+                                                                                        </li>
+                                                                                        <li class="seat row-0 col-10" style="top:0px;left:350px">
+                                                                                            <a title="51">51</a>
+                                                                                        </li>
+                                                                                        <li class="seat row-0 col-11" style="top:0px;left:385px">
+                                                                                            <a title="56">56</a>
+                                                                                        </li>
+                                                                                        <li class="seat row-0 col-12" style="top:0px;left:420px">
+                                                                                            <a title="61">61</a>
+                                                                                        </li>
+                                                                                        <li class="seat row-0 col-13" style="top:0px;left:455px">
+                                                                                            <a title="66">66</a>
+                                                                                        </li>
+                                                                                        <li class="seat row-0 col-14" style="top:0px;left:490px">
+                                                                                            <a title="71">71</a>
+                                                                                        </li>
+                                                                                        <li class="seat row-1 col-0" style="top:35px;left:0px">
+                                                                                            <a title="2">2</a>
+                                                                                        </li>
+                                                                                        <li class="seat row-1 col-1" style="top:35px;left:35px">
+                                                                                            <a title="7">7</a>
+                                                                                        </li>
+                                                                                        <li class="seat row-1 col-2" style="top:35px;left:70px">
+                                                                                            <a title="12">12</a>
+                                                                                        </li>
+                                                                                        <li class="seat row-1 col-3" style="top:35px;left:105px">
+                                                                                            <a title="17">17</a>
+                                                                                        </li>
+                                                                                        <li class="seat row-1 col-4" style="top:35px;left:140px">
+                                                                                            <a title="22">22</a>
+                                                                                        </li>
+                                                                                        <li class="seat row-1 col-5" style="top:35px;left:175px">
+                                                                                            <a title="27">27</a>
+                                                                                        </li>
+                                                                                        <li class="seat row-1 col-6" style="top:35px;left:210px">
+                                                                                            <a title="32">32</a>
+                                                                                        </li>
+                                                                                        <li class="seat row-1 col-7" style="top:35px;left:245px">
+                                                                                            <a title="37">37</a>
+                                                                                        </li>
+                                                                                        <li class="seat row-1 col-8" style="top:35px;left:280px">
+                                                                                            <a title="42">42</a>
+                                                                                        </li>
+                                                                                        <li class="seat row-1 col-9" style="top:35px;left:315px">
+                                                                                            <a title="47">47</a>
+                                                                                        </li>
+                                                                                        <li class="seat row-1 col-10" style="top:35px;left:350px">
+                                                                                            <a title="52">52</a>
+                                                                                        </li>
+                                                                                        <li class="seat row-1 col-11" style="top:35px;left:385px">
+                                                                                            <a title="57">57</a>
+                                                                                        </li>
+                                                                                        <li class="seat row-1 col-12" style="top:35px;left:420px">
+                                                                                            <a title="62">62</a>
+                                                                                        </li>
+                                                                                        <li class="seat row-1 col-13" style="top:35px;left:455px">
+                                                                                            <a title="67">67</a>
+                                                                                        </li>
+                                                                                        <li class="seat row-1 col-14" style="top:35px;left:490px">
+                                                                                            <a title="72">72</a>
+                                                                                        </li>
+                                                                                        <li class="seat row-2 col-0" style="top:70px;left:0px">
+                                                                                            <a title="3">3</a>
+                                                                                        </li>
+                                                                                        <li class="seat row-2 col-1" style="top:70px;left:70px">
+                                                                                            <a title="8">8</a>
+                                                                                        </li>
+                                                                                        <li class="seat row-2 col-2" style="top:70px;left:35px">
+                                                                                            <a title="13">13</a>
+                                                                                        </li>
+                                                                                        <li class="seat row-2 col-3" style="top:70px;left:105px">
+                                                                                            <a title="18">18</a>
+                                                                                        </li>
+                                                                                        <li class="seat row-2 col-4" style="top:70px;left:140px">
+                                                                                            <a title="23">23</a>
+                                                                                        </li>
+                                                                                        <li class="seat row-2 col-5" style="top:70px;left:175px">
+                                                                                            <a title="28">28</a>
+                                                                                        </li>
+                                                                                        <li class="seat row-2 col-6" style="top:70px;left:210px">
+                                                                                            <a title="33">33
+                                                                                                <a>
+                                                                                                </li>
+                                                                                                <li class="seat row-2 col-7" style="top:70px;left:245px">
+                                                                                                    <a title="38">38</a>
+                                                                                                </li>
+                                                                                                <li class="seat row-2 col-8" style="top:70px;left:280px">
+                                                                                                    <a title="43">43</a>
+                                                                                                </li>
+                                                                                                <li class="seat row-2 col-9" style="top:70px;left:315px">
+                                                                                                    <a title="48">48</a>
+                                                                                                </li>
+                                                                                                <li class="seat row-2 col-10" style="top:70px;left:350px">
+                                                                                                    <a title="53">53</a>
+                                                                                                </li>
+                                                                                                <li class="seat row-2 col-11" style="top:70px;left:385px">
+                                                                                                    <a title="58">58</a>
+                                                                                                </li>
+                                                                                                <li class="seat row-2 col-12" style="top:70px; left:420px">
+                                                                                                    <a title="63">63</a>
+                                                                                                </li>
+                                                                                                <li class="seat row-2 col-13" style="top:70px;left:455px">
+                                                                                                    <a title="68">68
+                                                                                                        <a/></a>
+                                                                                                    <li class="seat row-2 col-14" style="top:70px;left:490px">
+                                                                                                        <a title="73">73</a>
+                                                                                                    </li>
+                                                                                                    <li class="seat row-3 col-0" style="top:105px;left:0px">
+                                                                                                        <a title="4">4</a>
+                                                                                                    </li>
+                                                                                                    <li class="seat row-3 col-1" style="top:105px;left:35px">
+                                                                                                        <a title="9">9</a>
+                                                                                                    </li>
+                                                                                                    <li class="seat row-3 col-2" style="top:105px;left:70px">
+                                                                                                        <a title="14">14</a>
+                                                                                                    </li>
+                                                                                                    <li class="seat row-3 col-3" style="top:105px;left:105px">
+                                                                                                        <a title="19">19</a>
+                                                                                                    </li>
+                                                                                                    <li class="seat row-3 col-4" style="top:105px;left:140px">
+                                                                                                        <a title="24">24</a>
+                                                                                                    </li>
+                                                                                                    <li class="seat row-3 col-5" style="top:105px;left:175px">
+                                                                                                        <a title="29">29</a>
+                                                                                                    </li>
+                                                                                                    <li class="seat row-3 col-6" style="top:105px;left:210px">
+                                                                                                        <a title="34">34</a>
+                                                                                                    </li>
+                                                                                                    <li class="seat row-3 col-7" style="top:105px;left:245px">
+                                                                                                        <a title="39">39</a>
+                                                                                                    </li>
+                                                                                                    <li class="seat row-3 col-8" style="top:105px;left:280px">
+                                                                                                        <a title="44">44</a>
+                                                                                                    </li>
+                                                                                                    <li class="seat row-3 col-9" style="top:105px;left:315px">
+                                                                                                        <a title="49">49</a>
+                                                                                                    </li>
+                                                                                                    <li class="seat row-3 col-10" style="top:105px;left:350px">
+                                                                                                        <a title="54">54</a>
+                                                                                                    </li>
+                                                                                                    <li class="seat row-3 col-11" style="top:105px;left:385px">
+                                                                                                        <a title="59">59</a>
+                                                                                                    </li>
+                                                                                                    <li class="seat row-3 col-12" style="top:105px;left:420px">
+                                                                                                        <a title="64">64</a>
+                                                                                                    </li>
+                                                                                                    <li class="seat row-3 col-13" style="top:105px;left:455px">
+                                                                                                        <a title="69">69</a>
+                                                                                                    </li>
+                                                                                                    <li class="seat row-3 col-14" style="top:105px;left:490px">
+                                                                                                        <a title="74">74</a>
+                                                                                                    </li>
+                                                                                                    <li class="seat row-4 col-0 css class of alredy booked selectedSeat" style="top:140px;left:0px">
+                                                                                                        <a title="5">5</a>
+                                                                                                    </li>
+                                                                                                    <li class="seat row-4 col-1 css class of alredy booked selectedSeat" style="top:140px;left:35px">
+                                                                                                        <a title="10">10</a>
+                                                                                                    </li>
+                                                                                                    <li class="seat row-4 col-2" style="top:140px;left:70px">
+                                                                                                        <a title="15">15</a>
+                                                                                                    </li>
+                                                                                                    <li class="seat row-4 col-3" style="top:140px;left:105px">
+                                                                                                        <a title="20">20</a>
+                                                                                                    </li>
+                                                                                                    <li class="seat row-4 col-4 css class of alredy booked selectedSeat" style="top:140px;left:140px">
+                                                                                                        <a title="25">25</a>
+                                                                                                    </li>
+                                                                                                    <li class="seat row-4 col-5" style="top:140px;left:175px">
+                                                                                                        <a title="30">30</a>
+                                                                                                    </li>
+                                                                                                    <li class="seat row-4 col-6" style="top:140px;left:210px">
+                                                                                                        <a title="35">35</a>
+                                                                                                    </li>
+                                                                                                    <li class="seat row-4 col-7" style="top:140px;left:245px">
+                                                                                                        <a title="40">40</a>
+                                                                                                    </li>
+                                                                                                    <li class="seat row-4 col-8" style="top:140px;left:280px">
+                                                                                                        <a title="45">45</a>
+                                                                                                    </li>
+                                                                                                    <li class="seat row-4 col-9" style="top:140px;left:315px">
+                                                                                                        <a title="50">50</a>
+                                                                                                    </li>
+                                                                                                    <li class="seat row-4 col-10" style="top:140px;left:350px">
+                                                                                                        <a title="55">55</a>
+                                                                                                    </li>
+                                                                                                    <li class="seat row-4 col-11" style="top:140px;left:385px">
+                                                                                                        <a title="60">60</a>
+                                                                                                    </li>
+                                                                                                    <li class="seat row-4 col-12" style="top:140px;left:420px">
+                                                                                                        <a title="65">65</a>
+                                                                                                    </li>
+                                                                                                    <li class="seat row-4 col-13" style="top:140px;left:455px">
+                                                                                                        <a title="70">70</a>
+                                                                                                    </li>
+                                                                                                    <li class="seat row-4 col-14" style="top:140px;left:490px">
+                                                                                                        <a title="75">75</a>
+                                                                                                    </li>
+                                                                                                </ul>
+                                                                                            </div>
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                    <div style="width;200px;text-align:center;overflow:auto">
+                                                                                        <ul id="seatDescription">
+                                                                                            <li style="background:url({% static 'QuickBooking/images/available_seat_img.png' %}) no-repeat scroll 0 0 transparent;">Available Seat</li>
+                                                                                            <li style="background:url({% static 'QuickBooking/images/booked_seat_img.png' %}) no-repeat scroll 0 0 transparent;">Booked Seat</li>
+                                                                                            <li style="background:url({% static 'QuickBooking/images/selected_seat_img.png' %}) no-repeat scroll 0 0 transparent;">Selected Seat</li>
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                    <div style="width:580px;text-align:left;margin:15px">
+                                                                                        <input type="button" id="btnShowNew" value="Show Selected Seats" />
+                                                                                        <input type="button" id="btnShow" value="Show All" />
+                                                                                    </div>
+                                                                                    <h>choose bording points
+                                                                                        <h>
+                                                                                            <div class class="selectContainer BPContainer">
+                                                                                                <label class="Choose boading point"</label>
+                                                                                                <select>
+                                                                                                    <option>-- Boarding points --</option>
+                                                                                                    <option value="655038">JBS (Pickup Van/Bus) - 04:15 PM&nbsp;&nbsp;</option>
+                                                                                                    <option value="655039">Secunderabad - 04:30 PM&nbsp;&nbsp;</option>
+                                                                                                    <option value="655041">Paradise - 04:45 PM&nbsp;&nbsp;</option>
+                                                                                                    <option value="655046">Suchitra - 05:15 PM&nbsp;&nbsp;</option>
+                                                                                                    <option value="655044">Lakdikapool (Pickup Van/Bus) - 05:15 PM&nbsp;&nbsp;</option>
+                                                                                                    <option value="655048">Ameerpet (Pickup Van/Bus) - 05:40 PM&nbsp;&nbsp;</option>
+                                                                                                    <option value="655050">SR Nagar - 05:45 PM&nbsp;&nbsp;</option>
+                                                                                                    <option value="999314">SRINIVAS COLONY (Pickup Van/Bus) - 05:45 PM&nbsp;&nbsp;</option>
+                                                                                                    <option value="655054">Kukatpally - 06:00 PM&nbsp;&nbsp;</option>
+                                                                                                    <option value="655052">Madhapur (Pickup Van/Bus) - 06:00 PM&nbsp;&nbsp;</option>
+                                                                                                    <option value="655056">KPHB (Pickup Van/Bus) - 06:05 PM&nbsp;&nbsp;</option>
+                                                                                                    <option value="655060">Nizampet - 06:15 PM&nbsp;&nbsp;</option>
+                                                                                                    <option value="655058">Kondapur - 06:15 PM&nbsp;&nbsp;</option>
+                                                                                                    <option value="655062">Miyapur - 06:20 PM&nbsp;&nbsp;</option>
+                                                                                                    <option value="655065">Allwyn Colony - 06:30 PM&nbsp;&nbsp;</option>
+                                                                                                    <option value="655067">Zaheerabad - 09:15 PM&nbsp;&nbsp;</option>
+                                                                                                </select>
+                                                                                            </div>
+                                                                                            <div class="modal-footer">
+                                                                                                <form action ="{% url 'QuickBooking:details' %}" method="post">
+                                                                                                {% csrf_token %}
+                                
+                                                                                                    <button class="btn btn-primary">Continue</button>
+                                                                                                </form>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        {% endfor %}
+                                                                    </div>
+                                                                </table>
+                                                                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+                                                                <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+                                                                    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+                                                                    <script type="text/javascript" src="{% static "QuickBooking/js/home.js" %}"></script>
+                                                                    <script></script>
+                                                                </body>
+                                                            </html>

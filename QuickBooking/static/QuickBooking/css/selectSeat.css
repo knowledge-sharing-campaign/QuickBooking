@@ -1,0 +1,71 @@
+
+#holder{    
+height:200px;    
+width:550px;
+background-color:#F5F5F5;
+border:1px solid #A4A4A4;
+margin-left:10px;   
+}
+
+#place {
+position:relative;
+margin:7px;
+}
+
+#place a{
+font-size:0.6em;
+}
+
+#place li
+{
+ list-style: none outside none;
+ position: absolute;   
+ background-image:url("../images/available_seat_img.png");
+}
+
+#place li:hover
+{
+background-color:orange;      
+}
+
+#place .seat{
+background-image:url("../images/available_seat_img.png") no-repeat scroll 0 0 transparent;
+height:33px;
+width:33px;
+display:block;   
+}
+
+#place .selectedSeat
+{ 
+background-image:url("../images/booked_seat_img.png") !important;          
+}
+
+#place .selectingSeat
+{ 
+background-image:url("../images/selected_seat_img.png") !important;        
+}
+
+#place .row-3, #place .row-4{
+margin-top:10px;
+}
+
+#seatDescription li{
+verticle-align:middle;    
+list-style: none outside none;
+padding-left:35px;
+height:35px;
+float:left;
+}
+
+#boarder{ 
+	border-radius:15px;
+	background-color:lightblue;
+	padding:25px 0px;
+}
+#continueBtn{
+	background-color:red;
+padding-bottom:1px;
+border-bottom: 5px;
+font-style: 20px;
+}
+

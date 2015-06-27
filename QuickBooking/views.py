@@ -24,17 +24,33 @@ def results(request):
     bus_routes_date2 = request.POST['SecondDate']
     routes = []
 
-    for route in BusRoute.objects.all():
+    for route in bus_routes:
         date =  DateFormat(route.timing.date).format("m/d/Y")
 
         if date == bus_routes_date1:
             routes.append(route)
 
+    if len(routes) == 0:
+        header = " There is no bus available"
+    else:
+        header = "%s - %s" % (routes[0].src, routes[0].dest)
+
     template = loader.get_template('QuickBooking/results.html')
     context = RequestContext(request, {
         'bus_routes': routes,
+        'header': header,
         'bus_routes_date1': bus_routes_date1,
         'bus_routes_date2': bus_routes_date2
     })
-  
+    
+    return HttpResponse(template.render(context))
+
+
+def details(request):
+    print "Hit details"
+    template = loader.get_template('QuickBooking/details.html')
+    context = RequestContext(request, {
+        
+    })
+
     return HttpResponse(template.render(context))
