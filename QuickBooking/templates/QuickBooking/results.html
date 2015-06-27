@@ -20,7 +20,7 @@
     <table style="width:100%" align="center">
  <tr>
              <ul class="menu">
-        <li><a href="window.history.back();" method="post" class="back">BACK</a></li>
+        <li><a href="document.location.href="/";" method="post" class="back">BACK</a></li>
         <li><a method="post">Filter By :</a></li>
         <li><a href="#">Company</a>
         <ul>
@@ -66,13 +66,13 @@
         <li><a href="#">Good</a></li>
         <li><a href="#">Bad</a></li>
         </ul>
-        
+
     </tr>
   </table>
 
     <hr>
 
- <table style="width:100%" class="table">  
+ <table style="width:100%" class="table">
      <tr>
          <th>BUS COMPANY</th>
          <th>BUS MAKER</th>
@@ -85,7 +85,7 @@
         {% for route in bus_routes %}
          <tr>
             <td>{{ route.bus.company }}</td>
-            <td>{{ route.bus.make }}</td> 
+            <td>{{ route.bus.make }}</td>
             <td>
                <select>
                   <option value = "BusType1" > Semi-sleeper A/C </option    >
