@@ -8,6 +8,7 @@ function checkTravelType(option) {
           $('#form2').css("display", "none");
         } else 
         $('#form2').css("display", "inline-block");
+        
 
 }
 
