@@ -4,15 +4,17 @@
 	
 }
 body{
-	color: ;
-	font-style:;
 	font-family: 'Verdana'; 
 	height: ;
 	width: 100%;
-	margin: 0 auto;
-	background-size: 100% , 100% ;
 	background-repeat: no-repeat;
-	background-image: url("../images/way3.jpeg");
+	background-image: url("../images/way4.jpg");
+    -moz-background-size: cover;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: top center !important;
+	background-repeat: no-repeat !important;
+	background-attachment: fixed;
 	
 }
 
@@ -42,7 +44,7 @@ li{
 	float: left;
 	display: inline-block;
 	width: 100px;
-	background-color: 
+	background-color: ;
 }
 
 .table{
@@ -51,8 +53,12 @@ li{
 	background-color: rgb(128,128,128);
 	box-shadow: -1px 2px 2px 1px rgba(0, 0, 0, 1);
 }
-
+.header{
+	position: relative;
+	width: 100%;
+}
 .logo1{
+	text-align:center;
 	margin: -50px 50px 0em;
 	padding: -45px -5px 0em;
 }
@@ -69,3 +75,8 @@ li{
 .selectedRoute{
     text-align: center;
 }
+
+footer , h5{
+	color: white;
+}
+

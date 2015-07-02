@@ -8,8 +8,6 @@ function checkTravelType(option) {
           $('#form2').css("display", "none");
         } else 
         $('#form2').css("display", "inline-block");
-        
-
 }
 
 function oneTripDate(){
@@ -38,4 +36,14 @@ function loadAutocomplete (id, busRoutes) {
     });
   });
 }
+
+ function validateForm () {
+       return false;
+       
+ }
+
+
+        
+
+
 

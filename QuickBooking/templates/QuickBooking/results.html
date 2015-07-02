@@ -18,123 +18,72 @@
                                 <script type="text/javascript" src="{% static "QuickBooking/js/bootstrap.js" %}"></script>
                             </head>
                             <body>
-                                <a href="document.location.href="/";"> <img src="{% static "QuickBooking/images/logo3.png" %}" height="110"/></a>
-                                <table style="width:100%" align="center">
-                                    <tr>
-                                        <ul class="menu">
-                                            <li>
-                                                <a href="document.location.href="/";" method="post" class="back">BACK</a>
-                                            </li>
-                                            <li>
-                                                <a method="post">Filter By :</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Company</a>
-                                                <ul>
-                                                    <li>
-                                                        <a href="#">Orange Travels</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Bangalore M.T.C</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Bandra Bus Company</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">BEST Transport Division</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="#">Bus Type</a>
-                                                <ul>
-                                                    <li>
-                                                        <a href="#">Semi/SleeperAC</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Semi/Sleeper</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Sleeper/AC</a>
-                                                    </li>
-                                                    <LI>
-                                                        <a href="#">Sleeper</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="#">Time</a>
-                                                <ul>
-                                                    <li>
-                                                        <a href="#">00h-30</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">09h-45</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">19h-40</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="#">Price</a>
-                                                <ul>
-                                                    <li>
-                                                        <a href="#">1000rs</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">1500rs</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">2000rs</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Else</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="#">Amenities</a>
-                                                <ul>
-                                                    <li>
-                                                        <a href="#">Wifi</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">News Paper</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Food</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Cinema</a>
-                                                    </li>
-                                                </ul>
-                                                <li>
-                                                    <a href="#">Ratings</a>
-                                                    <ul>
-                                                        <li>
-                                                            <a href="#">Very Good</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#">Good</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#">Bad</a>
-                                                        </li>
-                                                    </ul>
-                                                </tr>
-                                            </table>
+                                <img src="{% static "QuickBooking/images/logo3.png" %}" height="110"/>
+
+                                <nav class="navbar navbar-inverse">
+                                <div class="container-fluid">
+                                  <div class="navbar-header">
+                                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                        <span class="sr-only"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                      </button>
+                                      <a class="navbar-brand" href="#">
+
+                                      </a>
+                                    </div>
+                                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                              <ul class="nav navbar-nav">
+                                                <li class="dropdown">
+                                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false"> Company </a>
+                                                  <ul class="dropdown-menu">
+                                                    <li><a href="#"></a></li>
+                                                  </ul>
+                                                </li>
+
+                                                <li class="dropdown">
+                                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Bus Type </a>
+                                                  <ul class="dropdown-menu">
+                                                    <li><a href="#">Action</a></li>
+                                                  </ul>
+                                                </li>
+                                                
+                                                <li class="dropdown">
+                                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Prices <span class="caret"></span></a>
+                                                  <ul class="dropdown-menu">
+                                                    <li><a href="#">Action</a></li>
+                                                  </ul>
+                                                </li>
+
+                                                <li class="dropdown">
+                                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Time <span class="caret"></span></a>
+                                                  <ul class="dropdown-menu">
+                                                    <li><a href="#">Action</a></li>
+                                                  </ul>
+                                                </li>
+                                              </ul>
+                                            </div>
+                                          </div>
+                                        </div>
+                                       </nav>
+
+
+
+
+
                                             <hr>
+
                                                 <div class="selectedRoute">
                                                     <h1>{{ header }}</h1>
                                                 </div>
                                                 <br />
-                                                <table style="width:100%" class="table">
+                                                <table class="table">
                                                     <tr>
                                                         <th>BUS COMPANY</th>
                                                         <th>BUS MAKER</th>
                                                         <th>BUS TYPE</th>
-                                                        <th>TIMING</th>
+                                                        <th>DURATION</th>
                                                         <th>COST</th>
                                                         <th>RATING</th>
                                                         <th>SEAT SELECTION</th>
@@ -143,14 +92,7 @@
                                                     <tr>
                                                         <td>{{ route.bus.company }}</td>
                                                         <td>{{ route.bus.make }}</td>
-                                                        <td>
-                                                            <select>
-                                                                <option value = "BusType1" > Semi-sleeper A/C </option    >
-                                                                <option value = "BusType2" > Semi-sleeper Non A/C</option>
-                                                                <option value = "BusType3" > sleeper AC  </option>
-                                                                <option value = "BusType4" > sleeper Non A/C </option>
-                                                            </select>
-                                                        </td>
+                                                        <td>{{ route. }}</td>
                                                         <td>{{ route.timing.date }}</td>
                                                         <th> Rs.{{ route.cost }} </th>
                                                         <td>
@@ -446,8 +388,7 @@
                                                                                             </div>
                                                                                             <div class="modal-footer">
                                                                                                 <form action ="{% url 'QuickBooking:details' %}" method="post">
-                                                                                                {% csrf_token %}
-                                
+                                                                                                    {% csrf_token %}
                                                                                                     <button class="btn btn-primary">Continue</button>
                                                                                                 </form>
                                                                                             </div>
@@ -459,6 +400,42 @@
                                                                         {% endfor %}
                                                                     </div>
                                                                 </table>
+                                                                
+                                                                <br /><br /><br /><br />
+
+
+     <footer>
+      <nav class="navbar navbar-inverse navbar-fixed-bottom">
+         <div class="container">
+             <div class="row">
+                 <div class="col-lg-2">
+                     <h5>Copyright &copy; 2015</h5>
+                 </div>
+
+                 <div class="col-lg-4">
+                     <h5>Address</h5>
+                     <p>Apurupa Slipi
+                     <br>
+                     Sy No 124 Part , 3rd Floor Gachibowli
+                     <br>
+                      Hyderabad , 500032
+                     </p>
+                 </div>
+
+                 <div class="col-lg-2">
+                    <h5>Contact Us</h5>
+                    <p>Mehra@india.com</p>
+                 </div>
+
+                 <div class="col-lg-4">
+                     <img src="{% static "QuickBooking/images/ecran.png" %}" height="110"/>
+                 </div>
+             </div>
+         </div>
+        </nav>
+     </footer>
+
+
                                                                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
                                                                 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
                                                                     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>

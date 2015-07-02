@@ -18,14 +18,12 @@
 </head>
 
 <body>
-    <center>
     <div class="logo1">
         <img src="{% static "QuickBooking/images/logo3.png" %}" height="300" width="700"  />
     </div>
-    </center>
 
     <center>
-
+    
     <div class="form">
     <form action="{% url 'QuickBooking:results' %}" method="post" class="form-inline">
      <div class="form-group">
@@ -39,33 +37,68 @@
     
     <br/><br/>
 
-             <input type="radio" name="trip" value="One Way" onclick="checkTravelType(this);" checked>One Way</input>
+             <input type="radio" name="trip" value="One Way" onclick="checkTravelType(this);" checked> One Way </input>
              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-             <input type="radio" name="trip" value="Round Trip" onclick="checkTravelType(this);">Round Trip</input>
+             <input type="radio" name="trip" value="Round Trip" onclick="checkTravelType(this);"> Round Trip </input>
         
              <br/><br/> 
 
             
              <input id="form" name ="FirstDate" placeholder="mm/dd/yy" class="form-control" onchange="oneTripDate();" autocomplete="off" required>
-             <input id="form2" name ="SecondDate" placeholder="mm/dd/yy" class="form-control"  class="roundtrip" autocomplete="off">
+             <input id="form2" name ="SecondDate" placeholder="mm/dd/yy" class="form-control" class="roundtrip" autocomplete="off">
 
              <br/><br/>
       
-             <div class="form-group">
+             
             <div class="col-sm-offset-0 col-sm-12">
               <button type="submit" class="btn btn-default">Search</button>
             </div>
           </div>
     </form>
-
     </div>
+    
      </center>    
+
+    <br /><br /><br /><br />
+
+
+     <footer>
+      <nav class="navbar navbar-inverse navbar-fixed-bottom">
+         <div class="container">
+             <div class="row">
+                 <div class="col-lg-2">
+                     <h5>Copyright &copy; 2015</h5>
+                 </div>
+
+                 <div class="col-lg-4">
+                     <h5>Address</h5>
+                     <p>Apurupa Slipi
+                     <br>
+                     Sy No 124 Part , 3rd Floor Gachibowli
+                     <br>
+                      Hyderabad , 500032
+                     </p>
+                 </div>
+
+                 <div class="col-lg-2">
+                    <h5>Contact Us</h5>
+                    <p>Mehra@india.com</p>
+                 </div>
+
+                 <div class="col-lg-4">
+                     <img src="{% static "QuickBooking/images/ecran.png" %}" height="110"/>
+                 </div>
+             </div>
+         </div>
+        </nav>
+     </footer>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 <script type="text/javascript" src="{% static "QuickBooking/js/home.js" %}"></script>
+<script ></script>
 
 </body>
 </html>
