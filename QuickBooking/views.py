@@ -54,3 +54,7 @@ def details(request):
     })
 
     return HttpResponse(template.render(context))
+
+def getbus(request):
+    type = request.GET['type']
+    seats = request.GET['seats']
