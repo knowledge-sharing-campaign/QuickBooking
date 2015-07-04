@@ -37,8 +37,8 @@ $(function() {
   //init();
 
   //Case II: If already booked
-  var bookedSeats = [5, 10, 25];
-  init(bookedSeats);
+  //var bookedSeats = [5, 10, 25];
+  //sinit(bookedSeats);
 
 
   $("#place").on("click", ".seat", function() {
@@ -54,7 +54,7 @@ $(function() {
         selectedSeats--;
       else {
         if (selectedSeats == settings.maxSelection) {
-          alert("Cannot select more than 6 seats.")
+          $("#errorSeats").html("Maximum number of seats selected.");
           return;
         }
         selectedSeats++;
