@@ -6,10 +6,10 @@ $('#form2').css("display", "none");
 function checkTravelType(option) {
         if (option.value !== "Round Trip") {
           $('#form2').css("display", "none");
-          $('#form2').removeAttr("required");
-        } else 
+        } else {
         $('#form2').css("display", "inline-block");
-        $('#form2').Attr("required");
+        $('#form2').prop("required", true);
+        }
 }
 
 function oneTripDate(){
