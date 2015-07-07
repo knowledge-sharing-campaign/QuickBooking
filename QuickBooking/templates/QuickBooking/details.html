@@ -1,9 +1,121 @@
-<!DOCTYPE html>
-<html>
+{% load staticfiles %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>Passenger details</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Passenger details</title>
+<link rel="stylesheet" media="screen" type="text/css" href="{% static "QuickBooking/css/details.css" %}"/>
+<link rel="stylesheet" type="" href="{% static "QuickBooking/css/bootstrap.css" %}">
 </head>
-<body>
-<h1>Passenger details</h1>
+
+<body style="margin:0" id="body"  >
+
+<!-- ***** Header (Logo & call center)****** -->
+
+<div> 
+<img src="{% static "QuickBooking/images/logo3.png" %}" class="logo_quickbooking" /></a><span class="logo_quickbooking"></span>
+<img src="{% static "QuickBooking/images/call_center.png" %}" class="call_center" /><span class="call_center"></span>
+</div>
+<!-- *************************************** -->
+
+<br/>
+<br/>
+<!-- *************** Menu ****************** -->
+
+<br/>
+<br/>
+<br/>
+<br/>
+	
+	<form class="passenger_info_form" action="" method="post"  name="passenger_info_form" >
+		<div id="formpassenger">
+		<ul>
+    		<li>
+        	 <h2>Passenger Details</h2>
+    		</li>
+    		<br/>
+    		<li>
+      		<label for="first name">First name:</label>
+        	<input type="text" name="first name" placeholder="Your first name"  required/>
+        	<span class="form_hint">Eg: Charles</span>
+    		</li>
+    		<li>
+        	<label for="last name">Last name:</label>
+        	<input type="text" name="first name" placeholder="Your last name" required />
+        	<span class="form_hint">Eg: MOUSSOUAMY</span>
+    		</li>
+    		<li>
+		<label for="gender">Gender:</label>
+		<select name="gender">
+      		<option>Male</option>
+      		<option>Female</option>
+      		</select>
+		</li>
+    		<li>
+    		<label for="email">Email:</label>
+   	  	<input type="text" name="email" placeholder="Your email"   required />
+    		<span class="form_hint">Eg: QuickBooking@gmail.com</span>
+		</li>
+		<li>
+		<label for="phone">Phone number:</label>
+	  	<input type="text" name="phone" maxlength="10"  placeholder="Your phone number" onKeypress="
+     		if(event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;
+     		if(event.which < 45 || event.which > 57) return false;" required/>
+		<span class="form_hint">Numeric</span>
+		</li>
+		<li>
+		<label for="id type">ID type:</label>
+		<select name="id type">
+			<option>Passport</option>
+			<option>Driving licence</option>
+			<option>National Citizen</option>
+            		<option>Voting Card</option>
+		</select>
+		<span class="form_hint">Please select the type of your ID</span>
+		</li>
+		<li>
+		<label for="id no">ID No</label>
+	  	<input type="text" name="id no" placeholder="Your ID No"  required/>
+		
+		</li>
+		<br/>
+
+		</ul>
+		</div>
+	</form>
+<br/>
+
+ <footer>
+      <nav class="navbar navbar-inverse navbar-fixed-bottom">
+         <div class="container">
+             <div class="row">
+                 <div class="col-lg-2">
+                     <h5>Copyright &copy; 2015</h5>
+                 </div>
+
+                 <div class="col-lg-4">
+                     <h5>Address</h5>
+                     <p>Apurupa Slipi
+                     <br>
+                     Sy No 124 Part , 3rd Floor Gachibowli
+                     <br>
+                      Hyderabad , 500032
+                     </p>
+                 </div>
+
+                 <div class="col-lg-2">
+                    <h5>Contact Us</h5>
+                    <p>QuickBooking@india.com</p>
+                 </div>
+
+                 <div class="col-lg-4">
+                     <img src="{% static "QuickBooking/images/ecran.png" %}" height="110"/>
+                 </div>
+             </div>
+         </div>
+        </nav>
+     </footer>
+
 </body>
 </html>
