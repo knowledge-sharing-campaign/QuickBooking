@@ -40,7 +40,8 @@ def results(request):
         'bus_routes': routes,
         'header': header,
         'bus_routes_date1': bus_routes_date1,
-        'bus_routes_date2': bus_routes_date2
+        'bus_routes_date2': bus_routes_date2,
+        'seat' : seat
     })
     
     return HttpResponse(template.render(context))
