@@ -50,8 +50,7 @@ class Seat(models.Model):
     seat_type = models.CharField(max_length = 20)
     occupied = models.BooleanField(default = False)
     seat_id = models.IntegerField(primary_key = True)
+    bus = models.ForeignKey(Bus, default=None)
 
     # def __unicode__(self):
     #     return "%s %s %s" % (self.seat_type, self.occupied, self.seat_id)
-
-    
