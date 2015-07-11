@@ -18,6 +18,8 @@ class Bus(models.Model):
     make = models.CharField(max_length=100)
     capacity = models.IntegerField(default=50)
     type = models.ForeignKey(BusType)
+    dep_time = models.TimeField(default=timezone.now)
+    Ar_time = models.TimeField(default=timezone.now)
 
     def __unicode__(self):
         return "%s %s" % (self.company, self.make)
@@ -47,9 +49,9 @@ class BusRoute(models.Model):
         return "%s -> %s >>> %s" % (self.src, self.dest, self.bus)
 
 class Seat(models.Model):
-    seat_type = models.CharField(max_length = 20)
+    seat_type = models.CharField(max_length=20)
     occupied = models.BooleanField(default = False)
-    seat_id = models.IntegerField(primary_key = True)
+    seat_id = models.CharField(primary_key = True, max_length=20)
     bus = models.ForeignKey(Bus, default=None)
 
     # def __unicode__(self):
