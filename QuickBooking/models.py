@@ -18,8 +18,8 @@ class Bus(models.Model):
     make = models.CharField(max_length=100)
     capacity = models.IntegerField(default=50)
     type = models.ForeignKey(BusType)
-    dep_time = models.TimeField(default=timezone.now)
-    Ar_time = models.TimeField(default=timezone.now)
+    departure_time = models.TimeField(default=timezone.now)
+    arrive_time = models.TimeField(default=timezone.now)
 
     def __unicode__(self):
         return "%s %s" % (self.company, self.make)

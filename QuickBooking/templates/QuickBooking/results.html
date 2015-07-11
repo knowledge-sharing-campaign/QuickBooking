@@ -83,7 +83,7 @@
                                                         <th>BUS COMPANY</th>
                                                         <th>BUS MAKER</th>
                                                         <th>BUS TYPE</th>
-                                                        <th>DURATION</th>
+                                                        <th colspan="2">DURATION</th>
                                                         <th>COST</th>
                                                         <th>RATING</th>
                                                         <th>SEAT SELECTION</th>
@@ -93,7 +93,8 @@
                                                         <td>{{ route.bus.company }}</td>
                                                         <td>{{ route.bus.make }}</td>
                                                         <td>{{ route.bus.type.type }}</td>
-                                                        <td>{{ route.duration }}</td>
+                                                        <td>{{ route.bus.departure_time }}</td>
+                                                        <td>{{ route.bus.arrive_time }}</td>
                                                         <th> Rs.{{ route.cost }} </th>
                                                         <td >
                                                             <div class="rating">
