@@ -1,5 +1,7 @@
 #QuickBooking.com
 
+[![Join the chat at https://gitter.im/knowledge-sharing-campaign/QuickBooking](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/knowledge-sharing-campaign/QuickBooking?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ##About
 This is the base repo for the Knowledge Sharing Campaign. This is a Django app which implements an online bus booking site using modern MVC methods.
 
