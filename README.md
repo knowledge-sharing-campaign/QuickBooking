@@ -1,7 +1,8 @@
 #QuickBooking.com
-
+The above site is down due to server reasons.
 ##About
 This is the base repo for the Knowledge Sharing Campaign. This is a Django app which implements an online bus booking site using modern MVC methods.
+
 
 ##How to use
 
