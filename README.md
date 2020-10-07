@@ -13,5 +13,7 @@ This is the base repo for the Knowledge Sharing Campaign. This is a Django app w
 * Run python manage.py migrate
 * Run python manage.py runserver to launch the dev HTTP server
 * Go to the admin page to add/remove/edit entires in db.
+*Go to the admin page to add/remove/edit entires in db.
+
 
 #Have fun!
